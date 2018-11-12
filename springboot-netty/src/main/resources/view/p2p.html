@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset = utf-8"/>
+		<title>WebSocket客户端</title>
+	<script type="text/javascript">
+		var ipaddress="127.0.0.1";
+		//新建socket对象
+		window.socket = new WebSocket("ws://"+ipaddress+":8888/ws");
+		//监听netty服务器消息并打印到页面上
+		socket.onmessage = function(event) {
+		      var datas=event.data.split(",");
+		      console.log("服务器消息===="+datas);
+		      $("#chat-box").text(datas);
+		      }
+		//将发送人接收人的id和要发生的消息发送出去
+		function send(){
+		    console.log($("#chat-input").val())
+		    var data=$("#myid").val()+","+$("#friendid").val()+","+$("#chat-input").val()
+		    socket.send(data)
+		}     
+		//登录事件
+		function login(){
+		    var data=$("#myid").val();
+		    socket.send(data);
+		}
+</script>
+
+	</head>
+	<body>
+<div id="content" class="row-center">
+<div id="chat-box" class="row-center">
+
+</div>
+<div id="input-box">
+ <input class="chat-input" id="chat-input" placeholder="message"></input>
+ <input id="myid" placeholder="myid">
+ <button id="login-button" onclick="login()">登录</button>
+ <input id="friendid" placeholder="friendid">
+<button class="chat-button" id="send" onclick="send()">发送</button>
+</div> 
+</div>
+</body>
+
+</html>

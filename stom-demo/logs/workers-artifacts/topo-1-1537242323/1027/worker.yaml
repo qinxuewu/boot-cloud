@@ -1,0 +1,4 @@
+worker-id: df1b4e94-60df-45a7-8b03-2ee95ef04d89
+logs.users: []
+logs.groups: []
+topology.submitter.user: admin

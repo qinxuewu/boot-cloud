@@ -1,0 +1,24 @@
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+
+    <servlet>
+        <servlet-name>qmvc</servlet-name>
+        <servlet-class>com.qxw.webmvc.servlet.QDispatcherServlet</servlet-class>
+        <!-- 配置初始化文件 -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>application.properties</param-value>
+        </init-param>
+        <!-- 启动加载 -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>qmvc</servlet-name>
+        <!-- 拦截所有以.do后缀结尾的请求 -->
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+</web-app>

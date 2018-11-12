@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/qq.css"/>
+<style type="text/css">
+.qqBox{display: none;}
+.login{
+	position: absolute;top: 30%;left: 40%;padding: 10px 10px;
+	width: 400px;height: 250px;border-radius: 5px;border: 1px solid #37b2e2;
+	text-align: center;
+	box-shadow: 10px 10px 5px #888888;
+	/*display: none;*/
+}
+.username{
+	width: 250px;
+	height: 30px;
+	line-height: 30px;border-radius: 5px;
+	margin-bottom: 10px;
+	outline:none;
+	border: none;
+	border: 2px solid #37b2e2;
+	text-indent: 3px;
+
+}
+.btn{
+	margin-top: 30px;
+	width: 250px;text-align: center;height: 40px;
+	line-height: 40px;border-radius: 5px;color: #fff;background-color: #37b2e2;
+	outline:none;
+}
+.nesHead span{font-size: 10px;position: absolute;margin-top: 5px;margin-left: 50px;}
+.answerHead span{font-size: 10px;position: absolute;}
+</style>
+</head>
+<body>
+
+<div class="qqBox">
+	<div class="BoxHead">
+		<div class="headImg">
+			<img src="img/6.jpg"/>
+		</div>
+		<div class="internetName">90后大叔</div>
+	</div>
+	<div class="context">
+		<div class="conLeft">
+			<!-- 用户现在列表-->
+			<ul>
+				<!-- <li>
+					<div class="liLeft"><img src="img/20170926103645_27.jpg"/></div>
+					<div class="liRight">
+						<span  class="intername">前端交流群</span>
+						<span class="infor">.....</span>
+					</div>
+				</li>	 -->		
+			</ul>
+		</div>
+		<div class="conRight">
+		<!-- 	<div class="Righthead">
+				<div class="headName">赵鹏</div>
+				<div class="headConfig">
+					<ul>
+						<li><img src="img/20170926103645_06.jpg"/></li>
+						<li><img src="img/20170926103645_08.jpg"/></li>
+						<li><img src="img/20170926103645_10.jpg"/></li>
+						<li><img src="img/20170926103645_12.jpg"/></li>
+					</ul>
+				</div>
+			</div> -->
+			<div class="RightCont">
+				<!--消息记录-->
+				<ul class="newsList">
+					<!-- <li>
+						<div class="nesHead">
+							<span>按时发斯</span>
+							<img src="img/6.jpg">
+							
+						</div>
+						<div class="news">
+							一入段子深似海，从此节操是路人		
+						</div>
+						<span style="font-size: 12px;">2018-10-12: 12:34:55</span>
+					</li> -->
+					<!-- <li>
+						<div class="answerHead">
+							<span>按时发斯</span>
+							<img src="img/tou.jpg">
+						</div>
+						<div class="answers">
+							一入段子深似海，从此节操是路人
+
+						</div>
+					</li> -->
+				</ul>
+			</div>
+			<div class="RightFoot">
+				<div class="emjon">
+					<ul>
+						<li><img src="img/em_02.jpg"/></li>
+						<li><img src="img/em_05.jpg"/></li>
+						<li><img src="img/em_07.jpg"/></li>
+						<li><img src="img/em_12.jpg"/></li>
+						<li><img src="img/em_14.jpg"/></li>
+						<li><img src="img/em_16.jpg"/></li>
+						<li><img src="img/em_20.jpg"/></li>
+					</ul>
+				</div>
+				<div class="footTop">
+					<ul>
+						<!-- <li><img src="img/20170926103645_31.jpg"/></li> -->
+						<li class="ExP"><img src="img/20170926103645_33.jpg"/></li>
+						<!-- <li><img src="img/20170926103645_35.jpg"/></li> -->
+						<!-- <li><img src="img/20170926103645_37.jpg"/></li> -->
+						<!-- <li><img src="img/20170926103645_39.jpg"/></li>
+						<li><img src="img/20170926103645_41.jpg" alt="" /></li> -->
+						<li><img src="img/20170926103645_43.jpg"/></li>
+						<!-- <li><img src="img/20170926103645_45.jpg"/></li> -->
+					</ul>
+				</div>
+				<div class="inputBox">
+					<textarea id="dope" style="width: 99%;height: 75px; border: none;outline: none;" name="" rows="" cols=""></textarea>
+					<button class="sendBtn" onclick="send()">发送(s)</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="login">
+	<h4>netty-webscoket 聊天室</h3>
+	<div><input type="text" class="username" placeholder="请输入用户名"></div>
+	<div><button class="btn"onclick="login()">登录聊天室</button></div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	var ipaddress="127.0.0.1";
+		var socket;
+        if (!window.WebSocket) {
+            window.WebSocket = window.MozWebSocket;
+        }
+          if (window.WebSocket) {
+            socket = new WebSocket("ws://"+ipaddress+":8888/ws");
+            socket.onmessage = function(event) {
+                var res=JSON.parse(event.data)
+                 console.log(res);
+                 	if(res.type=="login"){
+		                 	if(res.username==myid){
+		                 		$(".login").hide();
+		                 		$(".qqBox").show();
+		                 		$(".internetName").text(myid)
+		                 	}
+	                 		
+		                 	 var userlist=res.list;
+			                 	if (typeof(userlist) != undefined || userlist!="" || userlist!="undefined"){
+				                 	$(".conLeft ul").html("");
+				                 		//更新在线用户列表
+				                 	for (var i = 0; i <userlist.length; i++) {
+				                 		var html='<li>';
+				                 				html +='<div class="liLeft"><img src="img/20170926103645_27.jpg"/></div>';
+				                 				html +='<div class="liRight">';
+				                 				html +='<span  class="intername">'+userlist[i]+'</span><span class="infor">.....</span></div></li>';
+				                 				$(".conLeft ul").prepend(html);
+				                 		};
+			                	 }
+	                 }else if(res.type=="msg"){
+		                	var  html='<li><div class="nesHead"><span>'+res.senderId+'</span><img src="img/6.jpg"></div>';
+		                	html +='<div class="news">'+res.message+'</div><span style="font-size: 12px;">'+res.time+'</span></li>';
+		                	$('.newsList').append(html);
+
+               	 }else if(res.type=="noLogin"){
+               	 		alert("未登陆");
+               	 		return;
+               	 }else if(res.type=="noUser"){
+               	 		alert("用户不存在");
+               	 		return;
+               	 }
+			
+
+            };
+            socket.onopen = function(event) {
+              	   console.log("onopen===="+event.data);
+            };
+            socket.onclose = function(event) {
+               console.log("onclose===="+event.data);
+            };
+        } else {
+            alert("你的浏览器不支持 WebSocket！");
+        }
+
+		var myid="";
+		//登录事件
+		function login(){
+			var data={};
+			myid=$(".username").val()
+				data.myid=myid;
+		     if (socket.readyState===1) {
+		     	 socket.send(JSON.stringify(data));
+
+		     }
+		   
+		}
+
+		function send(){
+		    var data={};
+		    data.myid=myid;
+		    data.friendid=$("#friendid").val();
+		    data.message=$("#dope").val();
+		    console.log(data)
+		    socket.send(JSON.stringify(data))
+		}   
+
+
+function getDateDetail(date){
+	var d = new Date(parseInt(date));
+ 	var year = d.getFullYear();
+ 	var month = d.getMonth()+1;
+ 	var day = d.getDate();
+ 	var hour  = d.getHours();
+ 	var minute = d.getMinutes();
+ 	
+ 	var dNow = new Date();
+ 	var yearNow = dNow.getFullYear();
+ 	var monthNow = dNow.getMonth()+1;
+ 	var dayNow = dNow.getDate();
+ 	var hourNow  = dNow.getHours();
+ 	var minuteNow = dNow.getMinutes();
+ 	if(year==yearNow){
+ 		if(month==monthNow){
+ 			if(day==dayNow){
+ 				if(hour==hourNow){
+ 					return (minuteNow-minute)+"分钟前";
+ 				}else{
+ 					return (hourNow-hour)+"小时前";
+ 				}
+ 			}else{
+ 				if(dayNow-day<=3){
+ 					return (dayNow-day)+"天前";
+ 				}
+ 			}
+ 		}
+ 	}
+ 	return year+"-"+month+"-"+day;
+}
+
+</script>
+</body>
+</html>
