@@ -12,7 +12,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "sys_user")
-public class User  implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,7 +23,7 @@ public class User  implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     /**
      *  @Column有如下属性：
@@ -38,20 +38,17 @@ public class User  implements Serializable {
      *  precision：
      *  scale：
      */
-    @Column(nullable = false, unique = true)
-    private String userName;
-    @Column(nullable = false)
-    private String passWord;
-    @Column(name="create_time")
-    private Date createTime;
 
+    private String userName;
+    private String passWord;
+    private Date createTime;
     private  Integer status;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

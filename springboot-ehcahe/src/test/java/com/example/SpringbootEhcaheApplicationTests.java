@@ -101,7 +101,7 @@ public class SpringbootEhcaheApplicationTests {
         int status=1;
         Specification<User> query = new Specification<User>() {
 
-            @Override
+
             public Predicate toPredicate(Root<User> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
                 //用于暂时存放查询条件的集合
                 List<Predicate> predicatesList = new ArrayList<>();
