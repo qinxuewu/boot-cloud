@@ -20,11 +20,11 @@ public class Client {
         EventLoopGroup group = new NioEventLoopGroup();
         Bootstrap b = new Bootstrap();
         b.group(group).channel(NioSocketChannel.class).handler(new ChannelInitializer<SocketChannel>() {
-                    @Override
-                    protected void initChannel(SocketChannel sc) throws Exception {
-                        sc.pipeline().addLast(new ClientHandler()); //收到服务端发送过来的消息处理类
-                    }
-                });
+            @Override
+            protected void initChannel(SocketChannel sc) throws Exception {
+                sc.pipeline().addLast(new ClientHandler()); //收到服务端发送过来的消息处理类
+            }
+        });
 
         ChannelFuture cf1 = null;
         try {

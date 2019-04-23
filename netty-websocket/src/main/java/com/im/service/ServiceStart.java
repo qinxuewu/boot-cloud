@@ -1,12 +1,15 @@
 package com.im.service;
+
 import com.im.utils.NettyConfig;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+
 /**
  * 服务启动类  测试使用
+ *
  * @author qinxuewu
  * @create 18/10/13上午10:04
  * @since 1.0.0
@@ -42,7 +45,7 @@ public class ServiceStart {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             //优雅的退出程序
             bossGroup.shutdownGracefully();
             workGroup.shutdownGracefully();

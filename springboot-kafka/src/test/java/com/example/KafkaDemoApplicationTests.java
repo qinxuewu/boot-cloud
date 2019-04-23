@@ -13,9 +13,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class KafkaDemoApplicationTests {
     @Autowired
     private Producer producer;
+
     @Test
     public void contextLoads() {
-        for (int i = 0; i <3 ; i++) {
+        for (int i = 0; i < 3; i++) {
             producer.send();
             try {
                 Thread.sleep(1000);

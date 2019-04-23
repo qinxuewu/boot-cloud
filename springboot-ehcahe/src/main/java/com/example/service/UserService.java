@@ -1,4 +1,5 @@
 package com.example.service;
+
 import com.example.entity.User;
 import com.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
  *
  * @author qinxuewu
  * @version 1.00
- * @time  26/3/2019 下午 7:03
+ * @time 26/3/2019 下午 7:03
  * @email 870439570@qq.com
  */
 @Service
@@ -21,7 +22,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Autowired
-    private UserRepository  userRepository;
+    private UserRepository userRepository;
 
 
     public void save(User user) {
@@ -29,17 +30,17 @@ public class UserService {
     }
 
     /**
-     * @cachePut根据方法的请求参数对其结果进行缓存，和 @Cacheable 不同的是，它每次都会触发真实方法的调用。适用于更新和插入；
      * @return
+     * @cachePut根据方法的请求参数对其结果进行缓存，和 @Cacheable 不同的是，它每次都会触发真实方法的调用。适用于更新和插入；
      */
     @CacheEvict(key = "'user_'+ #userName")
-    public int update(String userName,int id) {
-        return userRepository.updateUserByuserNameAndId(userName,id);
+    public int update(String userName, int id) {
+        return userRepository.updateUserByuserNameAndId(userName, id);
     }
 
     /**
-     * @CacheEvict相当于delete（）操作。用来清除缓存用的。
      * @return
+     * @CacheEvict相当于delete（）操作。用来清除缓存用的。
      */
     @CacheEvict(key = "'user_'+ #userName")
     public void delete(String userName) {
@@ -47,13 +48,12 @@ public class UserService {
     }
 
     /**
-     * @Cacheable：应用到读取数据的方法上，即可缓存的方法，如查找方法：先从缓存中读取，
-     * 如果没有再调 用方法获取数据，然后把数据添加到缓存中，适用于查找；
      * @return
+     * @Cacheable：应用到读取数据的方法上，即可缓存的方法，如查找方法：先从缓存中读取， 如果没有再调 用方法获取数据，然后把数据添加到缓存中，适用于查找；
      */
     @Cacheable(key = "'user_'+ #userName")
     public User select(String userName) {
-       return userRepository.findByUserName(userName);
+        return userRepository.findByUserName(userName);
     }
 
 }

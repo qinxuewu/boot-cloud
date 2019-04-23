@@ -1,4 +1,5 @@
 package com.example.config;
+
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.annotation.SpringAnnotationScanner;
 import org.springframework.beans.factory.annotation.Value;
@@ -6,27 +7,25 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
-
 /**
+ * https://github.com/mrniko/netty-socketio-demo
+ * <p>
+ * <p>
+ * Socket.io配置
  *
- *  https://github.com/mrniko/netty-socketio-demo
- *
- *
- *  Socket.io配置
  * @author qinxuewu
  * @version 1.00
- * @time  29/3/2019 下午 3:44
+ * @time 29/3/2019 下午 3:44
  * @email 870439570@qq.com
  */
 @Configuration
 public class SocketConfig {
 
-        @Value("${socketio.server.hostName}")
-        private  String hostName;
+    @Value("${socketio.server.hostName}")
+    private String hostName;
 
-        @Value("${socketio.server.port}")
-        private  String port;
-
+    @Value("${socketio.server.port}")
+    private String port;
 
 
     @Bean

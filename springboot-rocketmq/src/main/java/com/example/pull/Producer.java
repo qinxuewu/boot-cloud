@@ -1,19 +1,20 @@
 package com.example.pull;
+
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * 在RocketMQ中一般有两种获取消息的方式，一个是拉(pull，消费者主动去broker拉取)，一个是推(push，主动推送给消费者)
- *
+ * <p>
  * push-优点：及时性、服务端统一处理实现方便
  * push-缺点：容易造成堆积、负载性能不可控
- *
+ * <p>
  * pull-优点：获得消息状态方便、负载均衡性能可控
  * pull-缺点：及时性差
- *
  *
  * @author qinxuewu
  * @version 1.00
@@ -39,15 +40,15 @@ public class Producer {
             //发送10条消息到Topic为TopicTest，tag为TagA，消息内容为“Hello RocketMQ”拼接上i的值
             for (int i = 0; i < 10; i++) {
                 try {
-                    Message msg = new Message("TopicTest", "i"+i,("Hello RocketMQ " + i).getBytes("utf-8"));
+                    Message msg = new Message("TopicTest", "i" + i, ("Hello RocketMQ " + i).getBytes("utf-8"));
 
                     //调用producer的send()方法发送消息
                     //这里调用的是同步的方式，所以会有返回结果
                     SendResult sendResult = producer.send(msg);
-                    System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+","+i);
+                    System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "," + i);
 //                    System.out.println(sendResult.getSendStatus()); //发送结果状态
                     //打印返回结果，可以看到消息发送的状态以及一些相关信息
-                     System.out.println(sendResult);
+                    System.out.println(sendResult);
                 } catch (Exception e) {
                     e.printStackTrace();
                     Thread.sleep(1000);
@@ -57,7 +58,7 @@ public class Producer {
             //发送完消息之后，调用shutdown()方法关闭producer
             producer.shutdown();
 
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 

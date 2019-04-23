@@ -14,7 +14,7 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
 
     public DynamicDataSource(DataSource defaultTargetDataSource, Map<String, DataSource> targetDataSources) {
         super.setDefaultTargetDataSource(defaultTargetDataSource);
-        super.setTargetDataSources(new HashMap<Object,Object>(targetDataSources));
+        super.setTargetDataSources(new HashMap<Object, Object>(targetDataSources));
         super.afterPropertiesSet();
     }
 

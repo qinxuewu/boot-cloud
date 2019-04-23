@@ -1,4 +1,5 @@
 package com.example.config;
+
 import com.example.directive.MyTagDirective;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -6,11 +7,11 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 /**
- *
  * 配置类
+ *
  * @author qinxuewu
  * @version 1.00
- * @time  19/3/2019 下午 6:39
+ * @time 19/3/2019 下午 6:39
  * @email 870439570@qq.com
  */
 @Component

@@ -1,0 +1,39 @@
+
+
+# JPA
+spring:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: create
+
+# Server
+server:
+  port: 8888
+
+# Sharding JDBC
+sharding:
+  jdbc:
+    data-sources:
+      ds_master:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/master?characterEncoding=utf8&useSSL=false
+        username: root
+        password: root
+      ds_slave:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/slave?characterEncoding=utf8&useSSL=false
+        username: root
+        password: root
+    master-slave-rule:
+      name: ds_ms
+      #主数据源名称
+      master-data-source-name: ds_master
+      #从数据源名称 多个用逗号隔开
+      slave-data-source-names: ds_slave
+      #查询时的负载均衡算法，目前有2种算法，round_robin（轮询）和random（随机）
+      load-balance-algorithm-type: round-robin
+

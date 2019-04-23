@@ -9,6 +9,7 @@ import java.nio.charset.Charset;
 
 /**
  * 自定义redis序列化方式
+ *
  * @author qinxuewu
  * @version 1.00
  * @time 8/8/2018下午 12:39

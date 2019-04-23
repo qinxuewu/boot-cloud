@@ -7,19 +7,19 @@
 
     <defaultCache
             eternal="false"
-            maxElementsInMemory = "1000"
+            maxElementsInMemory="1000"
             maxEntriesLocalHeap="200"
             overflowToDisk="true"
             diskPersistent="false"
             timeToIdleSeconds="300"
             timeToLiveSeconds="0"
-            clearOnFlush = "true"
+            clearOnFlush="true"
             memoryStoreEvictionPolicy="LFU"
     />
 
     <cache name="default-cache"
            eternal="false"
-           maxElementsInMemory = "500"
+           maxElementsInMemory="500"
            maxEntriesLocalHeap="200"
            overflowToDisk="true"
            diskPersistent="true"

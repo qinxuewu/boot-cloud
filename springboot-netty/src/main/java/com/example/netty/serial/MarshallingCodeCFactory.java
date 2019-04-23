@@ -1,4 +1,5 @@
 package com.example.netty.serial;
+
 import io.netty.handler.codec.marshalling.DefaultMarshallerProvider;
 import io.netty.handler.codec.marshalling.DefaultUnmarshallerProvider;
 import io.netty.handler.codec.marshalling.MarshallerProvider;
@@ -11,7 +12,8 @@ import org.jboss.marshalling.MarshallingConfiguration;
 
 
 /**
- *  Marshalling工厂
+ * Marshalling工厂
+ *
  * @author qinxuewu
  * @version 1.00
  * @time 11/10/2018下午 6:31
@@ -20,6 +22,7 @@ public final class MarshallingCodeCFactory {
 
     /**
      * 创建Jboss Marshalling解码器MarshallingDecoder
+     *
      * @return MarshallingDecoder
      */
     public static MarshallingDecoder buildMarshallingDecoder() {
@@ -37,6 +40,7 @@ public final class MarshallingCodeCFactory {
 
     /**
      * 创建Jboss Marshalling编码器MarshallingEncoder
+     *
      * @return MarshallingEncoder
      */
     public static MarshallingEncoder buildMarshallingEncoder() {

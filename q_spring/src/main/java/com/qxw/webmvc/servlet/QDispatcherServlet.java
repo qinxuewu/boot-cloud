@@ -118,24 +118,24 @@ public class QDispatcherServlet extends HttpServlet {
                     //获取请求的参数
                     Map<String, String[]> parameterMap = req.getParameterMap();
                     //保存参数值
-                    Object [] paramValues= new Object[parameterTypes.length];
+                    Object[] paramValues = new Object[parameterTypes.length];
                     //方法的参数列表
-                    for (int i = 0; i<parameterTypes.length; i++){
+                    for (int i = 0; i < parameterTypes.length; i++) {
                         //根据参数名称，做某些处理
                         String requestParam = parameterTypes[i].getSimpleName();
-                        if (requestParam.equals("HttpServletRequest")){
+                        if (requestParam.equals("HttpServletRequest")) {
                             //参数类型已明确，这边强转类型
-                            paramValues[i]=req;
+                            paramValues[i] = req;
                             continue;
                         }
-                        if (requestParam.equals("HttpServletResponse")){
-                            paramValues[i]=resp;
+                        if (requestParam.equals("HttpServletResponse")) {
+                            paramValues[i] = resp;
                             continue;
                         }
-                        if(requestParam.equals("String")){
+                        if (requestParam.equals("String")) {
                             for (Entry<String, String[]> param : parameterMap.entrySet()) {
-                                String value =Arrays.toString(param.getValue()).replaceAll("[|]", "").replaceAll(",s", ",");
-                                paramValues[i]=value;
+                                String value = Arrays.toString(param.getValue()).replaceAll("[|]", "").replaceAll(",s", ",");
+                                paramValues[i] = value;
                             }
                         }
                     }

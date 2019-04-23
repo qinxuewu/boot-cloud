@@ -4,8 +4,8 @@ import java.util.*;
 
 /**
  * 负载均衡算法
- *
- *
+ * <p>
+ * <p>
  * 负载均衡的几种简单实现：
  * (1)轮询法（Round Robin）
  * (2)随机法（Random）
@@ -20,7 +20,8 @@ import java.util.*;
  */
 public class LoadBalancingUtil {
     public static HashMap<String, Integer> serverWeightMap = new HashMap<String, Integer>();
-    private static Integer pos=0;
+    private static Integer pos = 0;
+
     static {
         //第一个参数是IP地址,第二个是权重.
         serverWeightMap.put("192.168.1.100", 1);
@@ -38,19 +39,20 @@ public class LoadBalancingUtil {
     public static void main(String[] args) {
         String result = null;
 
-        for(int i=0; i<10; i++){
+        for (int i = 0; i < 10; i++) {
             result = hash();
             System.out.println("load balance 的地址是:" + result);
         }
     }
+
     /**
      * 轮询法
      * 轮询法的优点在于：试图做到请求转移的绝对均衡。
-     *
+     * <p>
      * 轮询法的缺点在于：为了做到请求转移的绝对均衡，必须付出相当大的代价，因为为了保证pos变量修改的互斥性，
      * 需要引入重量级的悲观锁synchronized，这将会导致该段轮询代码的并发吞吐量发生明显的下降。
      */
-    public static String roundRobin(){
+    public static String roundRobin() {
         //取的IP地址的Set
         Set<String> ips = serverWeightMap.keySet();
 
@@ -58,9 +60,9 @@ public class LoadBalancingUtil {
         iplist.addAll(ips);
 
         String server = null;
-        synchronized (pos){
-            if(pos > iplist.size())
-                pos=0;
+        synchronized (pos) {
+            if (pos > iplist.size())
+                pos = 0;
             server = iplist.get(pos);
 
             pos++;
@@ -71,9 +73,10 @@ public class LoadBalancingUtil {
     /**
      * 随机法
      * 基于概率统计的理论，吞吐量越大，随机算法的效果越接近于轮询算法的效果。
+     *
      * @return
      */
-    public  static  String random(){
+    public static String random() {
         //取的IP地址的Set
         Set<String> ips = serverWeightMap.keySet();
 
@@ -93,9 +96,10 @@ public class LoadBalancingUtil {
      * 优点在于：保证了相同客户端IP地址将会被哈希到同一台后端服务器，直到后端服务器列表变更。根据此特性可以在服务消费者与服务提供者之间建立有状态的session会话。
      * 缺点在于：除非集群中服务器的非常稳定，基本不会上下线，否则一旦有服务器上线、下线，那么通过源地址哈希算法路由到的服务器是服务器上线、
      * 下线前路由到的服务器的概率非常低，如果是session则取不到session，如果是缓存则可能引发”雪崩”。
+     *
      * @return
      */
-    public  static  String hash(){
+    public static String hash() {
         //取的IP地址的Set
         Set<String> ips = serverWeightMap.keySet();
 
@@ -116,27 +120,28 @@ public class LoadBalancingUtil {
     /**
      * 加权轮询法
      * 与轮询法类似，只是在获取服务器地址之前增加了一段权重计算的代码，根据权重的大小，将地址重复地增加到服务器地址列表中，权重越大，该服务器每轮所获得的请求数量越多。
+     *
      * @return
      */
-    public  static String weightRoundRobin(){
+    public static String weightRoundRobin() {
         //取的IP地址的Set
         Set<String> ips = serverWeightMap.keySet();
         Iterator<String> iterator = ips.iterator();
 
         List<String> iplist = new ArrayList<String>();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             String server = iterator.next();
             int weight = serverWeightMap.get(server);
             //按照权重来添加比例.
-            for(int i=0; i<weight; i++){
+            for (int i = 0; i < weight; i++) {
                 iplist.add(server);
             }
         }
 
-        String server=null;
-        synchronized (pos){
-            if(pos > iplist.size())
-                pos=0;
+        String server = null;
+        synchronized (pos) {
+            if (pos > iplist.size())
+                pos = 0;
 
             server = iplist.get(pos);
 
@@ -147,19 +152,20 @@ public class LoadBalancingUtil {
 
     /**
      * 加权随机
+     *
      * @return
      */
-    public  static String weightRandom(){
+    public static String weightRandom() {
         //取的IP地址的Set
         Set<String> ips = serverWeightMap.keySet();
         Iterator<String> iterator = ips.iterator();
 
         List<String> iplist = new ArrayList<String>();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             String server = iterator.next();
             int weight = serverWeightMap.get(server);
             //按照权重来添加比例.
-            for(int i=0; i<weight; i++){
+            for (int i = 0; i < weight; i++) {
                 iplist.add(server);
             }
         }

@@ -3,7 +3,7 @@
 
 <mapper namespace="com.example.dao.UserDao">
 
-	<insert id="save" parameterType="com.example.entity.UserEntity" useGeneratedKeys="true" keyProperty="userId">
+    <insert id="save" parameterType="com.example.entity.UserEntity" useGeneratedKeys="true" keyProperty="userId">
 		insert into tb_user
 		(
 			`username`,
@@ -20,11 +20,11 @@
 			)
 	</insert>
 
-	<select id="queryObject" resultType="com.example.entity.UserEntity">
+    <select id="queryObject" resultType="com.example.entity.UserEntity">
 		select * from tb_user where user_id = #{value}
 	</select>
 
-	<select id="queryByMobile" resultType="com.example.entity.UserEntity">
+    <select id="queryByMobile" resultType="com.example.entity.UserEntity">
 		select * from tb_user where mobile = #{value}
 	</select>
 

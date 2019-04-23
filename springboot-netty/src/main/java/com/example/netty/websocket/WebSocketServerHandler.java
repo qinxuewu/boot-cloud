@@ -1,4 +1,5 @@
 package com.example.netty.websocket;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
@@ -18,6 +19,7 @@ import io.netty.util.CharsetUtil;
 import io.netty.util.concurrent.GlobalEventExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import static io.netty.handler.codec.http.HttpResponseStatus.BAD_REQUEST;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
@@ -25,6 +27,7 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
  * https://blog.csdn.net/weixin_39168678/article/details/79453585(点对点发消息)
  * https://blog.csdn.net/xzknet/article/details/78281195
  * https://github.com/waylau/essential-netty-in-action
+ *
  * @author qinxuewu
  * @version 1.00
  * @time 12/10/2018下午 5:54
@@ -41,28 +44,31 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler {
 
     /**
      * 服务端监听到客户端活动
+     *
      * @param ctx
      * @throws Exception
      */
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         Channel incoming = ctx.channel();
-        System.err.println("Client:"+incoming.remoteAddress()+"在线");
+        System.err.println("Client:" + incoming.remoteAddress() + "在线");
     }
 
     /**
      * 服务端监听到客户端不活动
+     *
      * @param ctx
      * @throws Exception
      */
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         Channel incoming = ctx.channel();
-        System.err.println("Client:"+incoming.remoteAddress()+"掉线不活动");
+        System.err.println("Client:" + incoming.remoteAddress() + "掉线不活动");
     }
 
     /**
      * 每当从服务端收到客户端断开时，客户端的 Channel 移除 ChannelGroup 列表中，并通知列表中的其他客户端 Channel
+     *
      * @param ctx
      * @throws Exception
      */
@@ -72,13 +78,14 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler {
         for (Channel channel : group) {
             channel.writeAndFlush(new TextWebSocketFrame("[SERVER] - " + incoming.remoteAddress() + " 离开"));
         }
-        System.err.println("Client:"+incoming.remoteAddress() +"离开");
+        System.err.println("Client:" + incoming.remoteAddress() + "离开");
         group.remove(ctx.channel());
 
     }
 
     /**
      * 每当从服务端收到新的客户端连接时，客户端的 Channel 存入 ChannelGroup 列表中，并通知列表中的其他客户端 Channel
+     *
      * @param ctx
      * @throws Exception
      */
@@ -89,12 +96,13 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler {
             channel.writeAndFlush(new TextWebSocketFrame("[SERVER] - " + incoming.remoteAddress() + " 加入"));
         }
         group.add(ctx.channel());
-        System.err.println("Client:"+incoming.remoteAddress() +"加入");
+        System.err.println("Client:" + incoming.remoteAddress() + "加入");
 
     }
 
     /**
      * 异常处理
+     *
      * @param ctx
      * @param cause
      * @throws Exception
@@ -103,7 +111,7 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
 
         Channel incoming = ctx.channel();
-        System.err.println("Client:"+incoming.remoteAddress()+"异常");
+        System.err.println("Client:" + incoming.remoteAddress() + "异常");
 
         cause.printStackTrace();
         ctx.close();
@@ -132,28 +140,31 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler {
 
     /**
      * 每当从服务端读到客户端写入信息时，将信息转发给其他客户端的 Channel。其中如果你使用的是 Netty 5.x 版本时，需要把 channelRead0() 重命名为messageReceived()
+     *
      * @param ctx
      * @param msg
      */
     @Override
-    public void messageReceived(ChannelHandlerContext ctx, Object msg){
+    public void messageReceived(ChannelHandlerContext ctx, Object msg) {
         try {
-            logger.info("收到客户端消息：{}",msg);
+            logger.info("收到客户端消息：{}", msg);
 
             if (msg instanceof FullHttpRequest) {
                 // 如果是HTTP请求，进行HTTP操作
                 handleHttpRequest(ctx, (FullHttpRequest) msg);
-            }else if (msg instanceof WebSocketFrame) {
+            } else if (msg instanceof WebSocketFrame) {
                 // 如果是Websocket请求，则进行websocket操作
                 handleWebSocketFrame(ctx, (WebSocketFrame) msg);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
+
     /**
      * http协议请求处理方法
+     *
      * @param ctx
      * @throws Exception
      */
@@ -179,6 +190,7 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler {
 
     /**
      * WebSocket消息处理方法
+     *
      * @param ctx
      * @param frame
      */
@@ -206,18 +218,17 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler {
         String request = ((TextWebSocketFrame) frame).text();
 
 
-
         //群发
         group.writeAndFlush(new TextWebSocketFrame(request + " , 现在时刻：" + new java.util.Date().toString()));
         //谁发的发给谁
 //        ctx.channel().writeAndFlush(new TextWebSocketFrame(request + " , 欢迎使用Netty WebSocket服务，现在时刻：" + new java.util.Date().toString()));
 
 
-
     }
 
     /**
      * 发送消息
+     *
      * @param ctx
      * @param req
      * @param res
@@ -238,8 +249,6 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler {
             f.addListener(ChannelFutureListener.CLOSE);
         }
     }
-
-
 
 
 }

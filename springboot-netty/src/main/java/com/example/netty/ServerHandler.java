@@ -1,4 +1,5 @@
 package com.example.netty;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
@@ -11,10 +12,11 @@ import io.netty.channel.ChannelHandlerContext;
  * @version 1.00
  * @time 9/10/2018下午 5:37
  */
-public class ServerHandler extends ChannelHandlerAdapter{
+public class ServerHandler extends ChannelHandlerAdapter {
 
     /**
      * 通道刚被激活时会调用次方法
+     *
      * @param ctx
      * @throws Exception
      */
@@ -25,6 +27,7 @@ public class ServerHandler extends ChannelHandlerAdapter{
 
     /**
      * 读取消息方法
+     *
      * @param ctx
      * @param msg
      * @throws Exception
@@ -35,15 +38,16 @@ public class ServerHandler extends ChannelHandlerAdapter{
         byte[] req = new byte[buf.readableBytes()];
         buf.readBytes(req);
         String body = new String(req, "utf-8");
-        System.out.println("Server :" + body );
+        System.out.println("Server :" + body);
 
-        String response = "进行返回给客户端的响应：" + body ;
+        String response = "进行返回给客户端的响应：" + body;
         ctx.writeAndFlush(Unpooled.copiedBuffer(response.getBytes()));
 
     }
 
     /**
      * 读取完毕后处理方法
+     *
      * @param ctx
      * @throws Exception
      */

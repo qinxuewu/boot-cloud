@@ -8,26 +8,25 @@ import com.web.service.ConsumerService;
 
 
 /**
- * 服务消费  
+ * 服务消费
+ *
  * @author qxw
  * 2017年11月1日
  */
 
 @RestController
-public class DcController{
+public class DcController {
 
 
-		@Autowired
-	    ConsumerService consumerService;
-		
-		
-	    @GetMapping("/consumer")
-	    public String dc() {
-	    	System.out.println("=========演示服务降级处理==========");
-	        return consumerService.consumer();
-	    }
+    @Autowired
+    ConsumerService consumerService;
 
-	    
-	    
-	   
+
+    @GetMapping("/consumer")
+    public String dc() {
+        System.out.println("=========演示服务降级处理==========");
+        return consumerService.consumer();
+    }
+
+
 }

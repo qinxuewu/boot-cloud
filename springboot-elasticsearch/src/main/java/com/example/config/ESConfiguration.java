@@ -1,4 +1,5 @@
 package com.example.config;
+
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -11,16 +12,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 /**
- *  elasticsearch spring-data 目前支持的最高版本为5.5 所以需要自己注入生成客户端
- *
+ * elasticsearch spring-data 目前支持的最高版本为5.5 所以需要自己注入生成客户端
+ * <p>
  * 数据配置，进行初始化操作
+ *
  * @author qinxuewu
  * @version 1.00
  * @time 28/8/2018下午 5:54
  */
 @Configuration
-public class ESConfiguration implements FactoryBean<RestHighLevelClient>, InitializingBean, DisposableBean {
-    private static final Logger LOG = LoggerFactory.getLogger(ESConfiguration.class);
+public class EsConfiguration implements FactoryBean<RestHighLevelClient>, InitializingBean, DisposableBean {
+    private static final Logger LOG = LoggerFactory.getLogger(EsConfiguration.class);
 
     @Value("${spring.data.elasticsearch.cluster-nodes}")
     private String clusterNodes;
@@ -37,6 +39,7 @@ public class ESConfiguration implements FactoryBean<RestHighLevelClient>, Initia
     public RestHighLevelClient getObject() throws Exception {
         return restHighLevelClient;
     }
+
     /**
      * 获取接口返回的实例的class
      *
@@ -58,6 +61,7 @@ public class ESConfiguration implements FactoryBean<RestHighLevelClient>, Initia
         }
     }
 
+    @Override
     public boolean isSingleton() {
         return false;
     }

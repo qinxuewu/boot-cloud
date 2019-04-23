@@ -1,4 +1,5 @@
 package com.im.service;
+
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
@@ -12,6 +13,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 初始化连接时候的各个组件
+ *
  * @author qinxuewu
  * @create 18/10/13上午10:39
  * @since 1.0.0
@@ -20,6 +22,7 @@ import org.slf4j.LoggerFactory;
 
 public class SocketChannelHandler extends ChannelInitializer<SocketChannel> {
     private static final Logger log = LoggerFactory.getLogger(SocketChannelHandler.class);
+
     @Override
     protected void initChannel(SocketChannel e) throws Exception {
         log.info("initChannel 初始化连接时候的各个组件........................");

@@ -1,14 +1,17 @@
 package com.pflm;
+
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+
 import javax.servlet.http.HttpServletRequest;
 
 
 /**
  * zuul不仅只是路由，并且还能过滤
+ *
  * @author qinxuewu
  * @version 1.00
  * @time 19/7/2018下午 4:50
@@ -43,6 +46,7 @@ class MyFilter extends ZuulFilter {
 
     /**
      * 请求拦截
+     *
      * @return
      */
     @Override
@@ -51,14 +55,15 @@ class MyFilter extends ZuulFilter {
         HttpServletRequest request = ctx.getRequest();
         log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
         Object accessToken = request.getParameter("token");
-        if(accessToken == null) {
+        if (accessToken == null) {
             log.warn("token is empty");
             //拦截
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
             try {
                 ctx.getResponse().getWriter().write("token is empty");
-            }catch (Exception e){}
+            } catch (Exception e) {
+            }
 
             return null;
         }

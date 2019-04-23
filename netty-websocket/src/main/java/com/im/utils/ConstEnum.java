@@ -10,7 +10,7 @@ package com.im.utils;
  */
 
 
-public enum  ConstEnum{
+public enum ConstEnum {
     MYID("myid"),
     FRIENDID("friendid"),
     MESSAGE("message");

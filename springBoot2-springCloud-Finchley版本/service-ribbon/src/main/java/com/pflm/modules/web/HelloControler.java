@@ -19,6 +19,6 @@ public class HelloControler {
     @GetMapping(value = "/hi")
     public String hi(@RequestParam String name) {
         System.out.print("----------HelloControler-----------------------");
-        return helloService.hiService( name );
+        return helloService.hiService(name);
     }
 }

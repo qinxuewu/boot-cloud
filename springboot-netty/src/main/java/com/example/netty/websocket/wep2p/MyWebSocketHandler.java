@@ -21,7 +21,8 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 /**
  * 接收/处理/响应客户端websocket请求的核心业务处理类
- *通过添加hanlder，我们可以监听Channel的各种动作以及状态的改变，包括连接，绑定，接收消息等。
+ * 通过添加hanlder，我们可以监听Channel的各种动作以及状态的改变，包括连接，绑定，接收消息等。
+ *
  * @author liuyazhuang
  */
 public class MyWebSocketHandler extends SimpleChannelInboundHandler<Object> {
@@ -107,15 +108,15 @@ public class MyWebSocketHandler extends SimpleChannelInboundHandler<Object> {
             ctx.channel().write(new PongWebSocketFrame(frame.content().retain()));
             return;
         }
-        
 
-       // NettyConfig.group.find(ctx.channel().id()).write(tws);
-        
+
+        // NettyConfig.group.find(ctx.channel().id()).write(tws);
+
         if (frame instanceof TextWebSocketFrame) {
             // 返回应答消息
             String requestMsg = ((TextWebSocketFrame) frame).text();
-            System.out.println("收到客户端" + UserInfoManager.parseChannelRemoteAddr(ctx.channel()) + "的消息==》"+requestMsg);
-            String[] array= requestMsg.split(",");
+            System.out.println("收到客户端" + UserInfoManager.parseChannelRemoteAddr(ctx.channel()) + "的消息==》" + requestMsg);
+            String[] array = requestMsg.split(",");
             // 将通道加入通道管理器。array[0]是发送者，1是接收者，2是具体消息内容
             UserInfoManager.addChannel(ctx.channel(), array[0]);
             if (array.length == 3) {
@@ -147,10 +148,9 @@ public class MyWebSocketHandler extends SimpleChannelInboundHandler<Object> {
 
         // 如果不是WebSocket握手请求消息，那么就返回 HTTP 400 BAD REQUEST 响应给客户端。
         if (!req.decoderResult().isSuccess() || !("websocket".equals(req.headers().get("Upgrade")))) {
-                sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST));
+            sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST));
             return;
         }
-
 
 
         //如果是握手请求，那么就进行握手

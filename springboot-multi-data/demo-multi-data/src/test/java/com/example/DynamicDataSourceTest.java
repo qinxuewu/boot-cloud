@@ -16,7 +16,7 @@ public class DynamicDataSourceTest {
     private DataSourceTestService dataSourceTestService;
 
     @Test
-    public void test(){
+    public void test() {
         //数据源1
 //        dataSourceTestService.save("13213212321321","123456");
 
@@ -24,9 +24,9 @@ public class DynamicDataSourceTest {
         //数据源2
         UserEntity user1 = dataSourceTestService.queryObject2(2L);
         UserEntity user2 = dataSourceTestService.queryObject2(2L);
-        System.out.println("数据源1读："+user1.getUsername());
+        System.out.println("数据源1读：" + user1.getUsername());
 
-        System.out.println("数据源2："+user2.getUsername());
+        System.out.println("数据源2：" + user2.getUsername());
 
 
     }

@@ -56,25 +56,22 @@
             <artifactId>jboss-marshalling-serial</artifactId>
             <version>1.4.11.Final</version>
         </dependency>
-        
+
         <dependency>
-			<groupId>org.t-io</groupId>
-			<artifactId>tio-core</artifactId>
-			<version>3.2.0.v20180918-RELEASE</version>
-	  </dependency>
-	  <dependency>
-			<groupId>org.t-io</groupId>
-			<artifactId>tio-websocket-server</artifactId>
-			<version>3.2.0.v20180918-RELEASE</version>
-	</dependency>
-	<dependency>
-		<groupId>org.t-io</groupId>
-		<artifactId>tio-http-server</artifactId>
-		<version>3.2.0.v20180918-RELEASE</version>
-	</dependency>
-
-
-
+            <groupId>org.t-io</groupId>
+            <artifactId>tio-core</artifactId>
+            <version>3.2.0.v20180918-RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.t-io</groupId>
+            <artifactId>tio-websocket-server</artifactId>
+            <version>3.2.0.v20180918-RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.t-io</groupId>
+            <artifactId>tio-http-server</artifactId>
+            <version>3.2.0.v20180918-RELEASE</version>
+        </dependency>
 
 
     </dependencies>

@@ -1,4 +1,5 @@
 package com.example.netty.serial;
+
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -8,21 +9,23 @@ import io.netty.util.ReferenceCountUtil;
 
 /**
  * netty入门之编解码
+ *
  * @author qinxuewu
  * @version 1.00
  * @time 11/10/2018下午 6:03
  */
 public class Client {
-    public static class ClientHandler extends ChannelHandlerAdapter{
+    public static class ClientHandler extends ChannelHandlerAdapter {
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
             try {
-                Resp resp = (Resp)msg;
+                Resp resp = (Resp) msg;
                 System.out.println("客户端 : " + resp.getId() + ", " + resp.getName() + ", " + resp.getResponseMessage());
             } finally {
                 ReferenceCountUtil.release(msg);
             }
         }
+
         @Override
         public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
             ctx.close();
@@ -47,7 +50,7 @@ public class Client {
             ChannelFuture cf = b.connect("127.0.0.1", 8889).sync();
 
             //循环5次 发送req对象
-            for(int i = 0; i < 5; i++ ){
+            for (int i = 0; i < 5; i++) {
                 Req req = new Req();
                 req.setId("" + i);
                 req.setName("pro" + i);
@@ -56,7 +59,7 @@ public class Client {
             }
             cf.channel().closeFuture().sync();
             group.shutdownGracefully();
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 

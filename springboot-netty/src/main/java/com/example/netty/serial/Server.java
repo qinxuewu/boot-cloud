@@ -1,4 +1,5 @@
 package com.example.netty.serial;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -9,21 +10,22 @@ import io.netty.handler.logging.LoggingHandler;
 
 /**
  * netty入门之编解码
+ *
  * @author qinxuewu
  * @version 1.00
  * @time 11/10/2018下午 6:03
  */
 public class Server {
-    public static  class ServerHandler extends ChannelHandlerAdapter{
+    public static class ServerHandler extends ChannelHandlerAdapter {
         @Override
         public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-                ctx.close();
+            ctx.close();
         }
 
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
             System.out.println(msg);
-            Req req = (Req)msg;
+            Req req = (Req) msg;
             //将客户端传过来的信息进行打印，然后将数据传入返回的实体类Resp，将实体类Resp返回给客户端
             System.out.println("Server : " + req.getId() + ", " + req.getName() + ", " + req.getRequestMessage());
 
@@ -58,7 +60,7 @@ public class Server {
             cf.channel().closeFuture().sync();
             pGroup.shutdownGracefully();
             cGroup.shutdownGracefully();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

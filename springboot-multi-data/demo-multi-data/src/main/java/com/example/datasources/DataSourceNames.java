@@ -9,5 +9,4 @@ public interface DataSourceNames {
     String SLAVE2 = "slave2";
 
 
-
 }

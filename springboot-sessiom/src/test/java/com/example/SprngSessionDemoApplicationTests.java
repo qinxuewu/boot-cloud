@@ -22,7 +22,7 @@ public class SprngSessionDemoApplicationTests {
     public void contextLoads() {
 
         stringRedisTemplate.opsForValue().set("dasdsadsadsadsa", "111");
-	        Assert.assertEquals("111", stringRedisTemplate.opsForValue().get("aaa"));
+        Assert.assertEquals("111", stringRedisTemplate.opsForValue().get("aaa"));
 
     }
 

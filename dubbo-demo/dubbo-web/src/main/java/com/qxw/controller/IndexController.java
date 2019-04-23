@@ -1,4 +1,5 @@
 package com.qxw.controller;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,29 +11,31 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.qxw.service.UserService;
 
 /**
- * ·þÎñÏû·ÑÕß
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ *
  * @author qxw
- * 2018Äê1ÔÂ10ÈÕ
+ * 2018ï¿½ï¿½1ï¿½ï¿½10ï¿½ï¿½
  */
 
 @Controller
 public class IndexController {
 
-	 	@Autowired
-	    private UserService userService;
+    @Autowired
+    private UserService userService;
 
-	 	/**
-	 	 * ·þÎñÏû·ÑÕß
-	 	 * @param request
-	 	 * @param response
-	 	 * @return
-	 	 */
-	    @RequestMapping(value = "/index", produces = "text/plain;charset=UTF-8")
-	    @ResponseBody
-	    public String index(HttpServletRequest request, HttpServletResponse response) {
-	        String name =request.getParameter("name");
-	        String result = userService.getName(name);
-	        return result;
-	    }
+    /**
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     *
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/index", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String index(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        String result = userService.getName(name);
+        return result;
+    }
 
 }

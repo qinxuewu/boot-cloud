@@ -5,10 +5,10 @@ import io.netty.channel.Channel;
 
 /**
  * 用户信息实体类
+ *
  * @author qinxuewu
  * @create 18/10/13上午9:44
  * @since 1.0.0
- *
  */
 public class UserInfo {
     private String userId;

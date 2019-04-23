@@ -1,4 +1,5 @@
 package com.im.service;
+
 import com.alibaba.fastjson.JSONObject;
 import com.im.bean.UserInfo;
 import com.im.utils.ConstEnum;
@@ -30,9 +31,10 @@ import java.util.concurrent.ConcurrentMap;
 
 import static io.netty.handler.codec.http.HttpResponseStatus.BAD_REQUEST;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
+
 /**
- *  接收/处理/响应客户端websocket请求的核心业务处理类
- *  通过添加hanlder，我们可以监听Channel的各种动作以及状态的改变，包括连接，绑定，接收消息等。
+ * 接收/处理/响应客户端websocket请求的核心业务处理类
+ * 通过添加hanlder，我们可以监听Channel的各种动作以及状态的改变，包括连接，绑定，接收消息等。
  *
  * @author qinxuewu
  * @create 18/10/13上午10:08
@@ -59,14 +61,14 @@ public class ServiceHandler extends SimpleChannelInboundHandler<Object> {
     //客户端与服务端断开连接的时候调用
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        UserInfo userinfo=MessageUtil.userInfos.get(ctx.channel());
-        log.info("与服务端连接关闭用户id: {}",userinfo.getUserId());
-        JSONObject json=new JSONObject();
-        json.put("type","login");
+        UserInfo userinfo = MessageUtil.userInfos.get(ctx.channel());
+        log.info("与服务端连接关闭用户id: {}", userinfo.getUserId());
+        JSONObject json = new JSONObject();
+        json.put("type", "login");
 
         NettyConfig.list.remove(userinfo.getUserId());
         log.info("目前在线用户：{}", NettyConfig.list.size());
-        json.put("list",NettyConfig.list);
+        json.put("list", NettyConfig.list);
 
         NettyConfig.group.remove(ctx.channel());
 
@@ -84,14 +86,14 @@ public class ServiceHandler extends SimpleChannelInboundHandler<Object> {
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         Channel incoming = ctx.channel();
         log.info("Client:" + incoming.remoteAddress() + "离开");
-        UserInfo userinfo=MessageUtil.userInfos.get(incoming);
+        UserInfo userinfo = MessageUtil.userInfos.get(incoming);
 
-        JSONObject json=new JSONObject();
-        json.put("type","login");
+        JSONObject json = new JSONObject();
+        json.put("type", "login");
 
         NettyConfig.list.remove(userinfo.getUserId());
         log.info("目前在线用户：{}", NettyConfig.list.size());
-        json.put("list",NettyConfig.list);
+        json.put("list", NettyConfig.list);
 
         NettyConfig.group.remove(ctx.channel());
 
@@ -171,7 +173,7 @@ public class ServiceHandler extends SimpleChannelInboundHandler<Object> {
 
         //判断是否是关闭websocket的指令
         if (frame instanceof CloseWebSocketFrame) {
-            log.info("关闭websocket的指令:{},{}",ctx.channel().id());
+            log.info("关闭websocket的指令:{},{}", ctx.channel().id());
             handshaker.close(ctx.channel(), (CloseWebSocketFrame) frame.retain());
         }
 
@@ -193,36 +195,36 @@ public class ServiceHandler extends SimpleChannelInboundHandler<Object> {
 
             String myid = info.getString(ConstEnum.MYID.getName());
 
-            if(StringUtils.isEmpty(myid)){
-                JSONObject j=new JSONObject();
-                j.put("type","noLogin");
-                log.info("用户还未登录不能发送消息 ,channelID :{}",ctx.channel().id());
+            if (StringUtils.isEmpty(myid)) {
+                JSONObject j = new JSONObject();
+                j.put("type", "noLogin");
+                log.info("用户还未登录不能发送消息 ,channelID :{}", ctx.channel().id());
                 ctx.writeAndFlush(new TextWebSocketFrame(j.toJSONString()));
                 return;
             }
 
             //登录
-            if(!info.containsKey(ConstEnum.FRIENDID.getName())&& ! info.containsKey(ConstEnum.MESSAGE.getName())){
+            if (!info.containsKey(ConstEnum.FRIENDID.getName()) && !info.containsKey(ConstEnum.MESSAGE.getName())) {
                 // 将通道加入通道管理器。
                 MessageUtil.addChannel(ctx.channel(), myid, "");
-                log.info("用户登录OK ,名称:{}",myid);
-                JSONObject j=new JSONObject();
-                j.put("type","login");
-                j.put("username",myid);
+                log.info("用户登录OK ,名称:{}", myid);
+                JSONObject j = new JSONObject();
+                j.put("type", "login");
+                j.put("username", myid);
 
                 //加入临时用户在线列表
                 NettyConfig.list.add(myid);
-                j.put("list",NettyConfig.list);
+                j.put("list", NettyConfig.list);
                 //上线通知
                 NettyConfig.group.writeAndFlush(new TextWebSocketFrame(j.toJSONString()));
 
                 log.info("目前在线用户：{}", NettyConfig.list.size());
                 return;
             }
-            if(!NettyConfig.list.contains(myid)){
-                JSONObject j=new JSONObject();
-                j.put("type","noUser");
-                log.info("该用户不存在：{}",myid);
+            if (!NettyConfig.list.contains(myid)) {
+                JSONObject j = new JSONObject();
+                j.put("type", "noUser");
+                log.info("该用户不存在：{}", myid);
                 ctx.writeAndFlush(new TextWebSocketFrame(j.toJSONString()));
                 return;
 
@@ -238,13 +240,13 @@ public class ServiceHandler extends SimpleChannelInboundHandler<Object> {
             } else {
                 String senderId = info.getString(ConstEnum.MYID.getName());
                 String message = info.getString(ConstEnum.MESSAGE.getName());
-                JSONObject j=new JSONObject();
-                j.put("senderId",senderId);
-                j.put("message",message);
-                j.put("type","msg");
+                JSONObject j = new JSONObject();
+                j.put("senderId", senderId);
+                j.put("message", message);
+                j.put("type", "msg");
                 // 获取当前的日期时间
-                LocalDateTime currentTime =LocalDateTime.now();
-                j.put("time",TimeUtil.format(currentTime,"yyyy-MM-dd HH:mm:ss"));
+                LocalDateTime currentTime = LocalDateTime.now();
+                j.put("time", TimeUtil.format(currentTime, "yyyy-MM-dd HH:mm:ss"));
 
                 //如果没有指定接收者表示群发
                 log.debug("用户" + senderId + "群发了一条消息：" + message);
@@ -253,53 +255,54 @@ public class ServiceHandler extends SimpleChannelInboundHandler<Object> {
         }
 
     }
-        /**
-         * 处理客户端向服务端发起http握手请求的业务
-         *
-         * @param ctx
-         * @param req
-         */
-        private void handHttpRequest (ChannelHandlerContext ctx, FullHttpRequest req){
 
-            // 如果不是WebSocket握手请求消息，那么就返回 HTTP 400 BAD REQUEST 响应给客户端。
-            if (!req.decoderResult().isSuccess() || !("websocket".equals(req.headers().get("Upgrade")))) {
-                sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST));
-                return;
-            }
+    /**
+     * 处理客户端向服务端发起http握手请求的业务
+     *
+     * @param ctx
+     * @param req
+     */
+    private void handHttpRequest(ChannelHandlerContext ctx, FullHttpRequest req) {
 
-
-            //如果是握手请求，那么就进行握手
-            WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(WEB_SOCKET_URL, null, false);
-            handshaker = wsFactory.newHandshaker(req);
-            if (handshaker == null) {
-                WebSocketServerHandshakerFactory.sendUnsupportedVersionResponse(ctx.channel());
-            } else {
-                // 通过它构造握手响应消息返回给客户端，
-                // 同时将WebSocket相关的编码和解码类动态添加到ChannelPipeline中，用于WebSocket消息的编解码，
-                // 添加WebSocketEncoder和WebSocketDecoder之后，服务端就可以自动对WebSocket消息进行编解码了
-                handshaker.handshake(ctx.channel(), req);
-            }
+        // 如果不是WebSocket握手请求消息，那么就返回 HTTP 400 BAD REQUEST 响应给客户端。
+        if (!req.decoderResult().isSuccess() || !("websocket".equals(req.headers().get("Upgrade")))) {
+            sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST));
+            return;
         }
 
-        /**
-         * 服务端向客户端响应消息
-         *
-         * @param ctx
-         * @param req
-         * @param res
-         */
-        private void sendHttpResponse (ChannelHandlerContext ctx, FullHttpRequest req,
-                DefaultFullHttpResponse res){
-            // 返回应答给客户端
-            if (res.status().code() != 200) {
-                ByteBuf buf = Unpooled.copiedBuffer(res.status().toString(), CharsetUtil.UTF_8);
-                res.content().writeBytes(buf);
-                buf.release();
-            }
-            // 如果是非Keep-Alive，关闭连接
-            ChannelFuture f = ctx.channel().writeAndFlush(res);
-            if (res.status().code() != 200) {
-                f.addListener(ChannelFutureListener.CLOSE);
-            }
+
+        //如果是握手请求，那么就进行握手
+        WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(WEB_SOCKET_URL, null, false);
+        handshaker = wsFactory.newHandshaker(req);
+        if (handshaker == null) {
+            WebSocketServerHandshakerFactory.sendUnsupportedVersionResponse(ctx.channel());
+        } else {
+            // 通过它构造握手响应消息返回给客户端，
+            // 同时将WebSocket相关的编码和解码类动态添加到ChannelPipeline中，用于WebSocket消息的编解码，
+            // 添加WebSocketEncoder和WebSocketDecoder之后，服务端就可以自动对WebSocket消息进行编解码了
+            handshaker.handshake(ctx.channel(), req);
         }
     }
+
+    /**
+     * 服务端向客户端响应消息
+     *
+     * @param ctx
+     * @param req
+     * @param res
+     */
+    private void sendHttpResponse(ChannelHandlerContext ctx, FullHttpRequest req,
+                                  DefaultFullHttpResponse res) {
+        // 返回应答给客户端
+        if (res.status().code() != 200) {
+            ByteBuf buf = Unpooled.copiedBuffer(res.status().toString(), CharsetUtil.UTF_8);
+            res.content().writeBytes(buf);
+            buf.release();
+        }
+        // 如果是非Keep-Alive，关闭连接
+        ChannelFuture f = ctx.channel().writeAndFlush(res);
+        if (res.status().code() != 200) {
+            f.addListener(ChannelFutureListener.CLOSE);
+        }
+    }
+}

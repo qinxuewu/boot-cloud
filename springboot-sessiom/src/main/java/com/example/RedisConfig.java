@@ -14,7 +14,7 @@ import org.springframework.session.data.redis.RedisOperationsSessionRepository;
 import java.time.Duration;
 
 /**
- *  redis 配置
+ * redis 配置
  *
  * @author WangBin
  * @version V1.0
@@ -39,7 +39,8 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     /**
-     *  设置 redisTemplate 序列化方式
+     * 设置 redisTemplate 序列化方式
+     *
      * @param factory
      * @return
      */
@@ -62,12 +63,13 @@ public class RedisConfig extends CachingConfigurerSupport {
 
     /**
      * 设置spring session redis 序列化方式
+     *
      * @param factory
      * @return
      */
     @Bean
-    public SessionRepository sessionRepository(RedisConnectionFactory factory){
-        RedisOperationsSessionRepository sessionRepository =  new RedisOperationsSessionRepository(redisTemplate(factory));
+    public SessionRepository sessionRepository(RedisConnectionFactory factory) {
+        RedisOperationsSessionRepository sessionRepository = new RedisOperationsSessionRepository(redisTemplate(factory));
         FastJsonRedisSerializer<Object> fastJsonRedisSerializer = new FastJsonRedisSerializer<>(Object.class);
         sessionRepository.setDefaultSerializer(fastJsonRedisSerializer);
         sessionRepository.setDefaultMaxInactiveInterval(36000);

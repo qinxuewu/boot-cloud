@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * 〈全局配置〉
+ *
  * @author qinxuewu
  * @create 18/10/13上午9:43
  * @since 1.0.0
@@ -24,10 +25,10 @@ public class NettyConfig {
     /**
      * 存储临时用户列表
      */
-    public static List<String> list=new ArrayList<>();
+    public static List<String> list = new ArrayList<>();
 
     /**
      * 端口号
      */
-    public static int port=8888;
+    public static int port = 8888;
 }

@@ -1,13 +1,15 @@
 package com.example.entity;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 用户类
+ *
  * @author qinxuewu
  * @version 1.00
- * @time  26/3/2019 下午 1:55
+ * @time 26/3/2019 下午 1:55
  * @email 870439570@qq.com
  */
 @Entity
@@ -18,31 +20,30 @@ public class User implements Serializable {
 
 
     /**
-     *  @ID：指定的类的属性，用于识别（一个表中的主键）
-     *  @GeneratedValue：指定如何标识属性可以被初始化，例如自动、手动、或从序列表中获得的值
+     * @ID：指定的类的属性，用于识别（一个表中的主键）
+     * @GeneratedValue：指定如何标识属性可以被初始化，例如自动、手动、或从序列表中获得的值
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
-     *  @Column有如下属性：
-     *  name： 字段名
-     *  unique： 是否唯一
-     *  nullable： 是否可以为空
-     *  insertable：是否允许插入
-     *  updatable： 是否允许更新
-     *  columnDefinition： 定义建表时创建此列的DDL
-     *  table：
-     *  length：  长度
-     *  precision：
-     *  scale：
+     * @Column有如下属性： name： 字段名
+     * unique： 是否唯一
+     * nullable： 是否可以为空
+     * insertable：是否允许插入
+     * updatable： 是否允许更新
+     * columnDefinition： 定义建表时创建此列的DDL
+     * table：
+     * length：  长度
+     * precision：
+     * scale：
      */
 
     private String userName;
     private String passWord;
     private Date createTime;
-    private  Integer status;
+    private Integer status;
 
     public Long getId() {
         return id;

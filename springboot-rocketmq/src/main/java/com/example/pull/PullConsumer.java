@@ -1,8 +1,10 @@
 package com.example.pull;
+
 import org.apache.rocketmq.client.consumer.DefaultMQPullConsumer;
 import org.apache.rocketmq.client.impl.consumer.PullResultExt;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.common.message.MessageQueue;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,11 +25,11 @@ public class PullConsumer {
             consumer.setNamesrvAddr("127.0.0.1:9876");
             consumer.start();
             Set<MessageQueue> mqs = consumer.fetchSubscribeMessageQueues("TopicTest");
-            for(MessageQueue mq:mqs) {
+            for (MessageQueue mq : mqs) {
                 System.out.println("Consume from the queue: " + mq);
 
 
-                PullResultExt pullResult =(PullResultExt)consumer.pullBlockIfNotFound(mq, null, getMessageQueueOffset(mq), 32);
+                PullResultExt pullResult = (PullResultExt) consumer.pullBlockIfNotFound(mq, null, getMessageQueueOffset(mq), 32);
                 putMessageQueueOffset(mq, pullResult.getNextBeginOffset());
                 switch (pullResult.getPullStatus()) {
                     case FOUND:
@@ -39,7 +41,7 @@ public class PullConsumer {
                     case NO_MATCHED_MSG:
                         break;
                     case NO_NEW_MSG:
-                        break ;
+                        break;
                     case OFFSET_ILLEGAL:
                         break;
                     default:
@@ -47,7 +49,7 @@ public class PullConsumer {
                 }
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }

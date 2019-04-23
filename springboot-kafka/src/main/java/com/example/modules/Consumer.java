@@ -10,6 +10,7 @@ import java.util.Optional;
 
 /**
  * 〈消费者〉
+ *
  * @author qinxuewu
  * @create 18/8/5上午12:00
  * @since 1.0.0
@@ -18,13 +19,15 @@ import java.util.Optional;
 @Component
 public class Consumer {
     private static final Logger logger = LoggerFactory.getLogger(Consumer.class);
+
     /**
-     *  同时监听两个 topic 的消息了，可同时监听多个topic
+     * 同时监听两个 topic 的消息了，可同时监听多个topic
+     *
      * @param record
      * @throws Exception
      */
-    @KafkaListener(topics = {"test","qxw"})
-    public void listen (ConsumerRecord<?, ?> record) throws Exception {
+    @KafkaListener(topics = {"test", "qxw"})
+    public void listen(ConsumerRecord<?, ?> record) throws Exception {
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {
             Object message = kafkaMessage.get();

@@ -1,4 +1,5 @@
 package com.example.repository;
+
 import com.example.entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,14 +16,15 @@ import java.util.Map;
 /**
  * @author qinxuewu
  * @version 1.00
- * @time  26/3/2019 下午 3:04
+ * @time 26/3/2019 下午 3:04
  * @email 870439570@qq.com
  */
 @Transactional
-public interface UserRepository   extends JpaRepository<User, Long>, JpaSpecificationExecutor {
+public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor {
 
     /**
      * 自动生成查询sql语句
+     *
      * @param userName
      * @return
      */
@@ -34,7 +36,9 @@ public interface UserRepository   extends JpaRepository<User, Long>, JpaSpecific
      * 分页查询
      * @param pageable
      * @return
-     */;
+     */
+    ;
+
     Page<User> findByUserName(String userName, Pageable pageable);
 
 
@@ -61,12 +65,12 @@ public interface UserRepository   extends JpaRepository<User, Long>, JpaSpecific
     User findByEmailAddress(String userName);
 
     //原生sql查询语句
-    @Query(nativeQuery =true,value = "select * from sys_user where user_name= :userName")
+    @Query(nativeQuery = true, value = "select * from sys_user where user_name= :userName")
     List<User> getListSql(@Param("userName") String userName);
 
 
-    @Query(nativeQuery =true,value = "select id,user_name from sys_user where user_name= :userName")
-    List<Map<String,Object>> getListSqlObj(@Param("userName") String userName);
+    @Query(nativeQuery = true, value = "select id,user_name from sys_user where user_name= :userName")
+    List<Map<String, Object>> getListSqlObj(@Param("userName") String userName);
 
 
 }

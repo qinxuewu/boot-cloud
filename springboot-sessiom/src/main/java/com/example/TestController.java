@@ -18,7 +18,7 @@ import java.util.Map;
 public class TestController {
 
     @RequestMapping(value = "/first", method = RequestMethod.GET)
-    public Map<String, Object> firstResp (HttpServletRequest request){
+    public Map<String, Object> firstResp(HttpServletRequest request) {
         Map<String, Object> map = new HashMap<>();
         request.getSession().setAttribute("request Url", request.getRequestURL());
         map.put("request Url", request.getRequestURL());

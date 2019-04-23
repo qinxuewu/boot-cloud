@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * 消费者
+ *
  * @author qinxuewu
  * @version 1.00
  * @time 27/8/2018上午 11:32

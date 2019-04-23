@@ -48,7 +48,7 @@ public class UserInfoManager {
                 for (Channel ch : keySet) {
                     UserInfo userInfo = userInfos.get(ch);
                     // 当前通道不是接收者的话，重新遍历
-                    if (!userInfo.getUserId().equals(receiverId) )
+                    if (!userInfo.getUserId().equals(receiverId))
                         continue;
                     // 当前通道是接收者的
                     String backMessage = senderId + "发来消息：" + message;
@@ -60,7 +60,7 @@ public class UserInfoManager {
                     // 对方不在线
                     for (Channel ch : keySet) {
                         UserInfo userInfo = userInfos.get(ch);
-                        if (!userInfo.getUserId().equals(senderId) )
+                        if (!userInfo.getUserId().equals(senderId))
                             continue;
                         String backMessage = receiverId + "不在线";
                         ch.writeAndFlush(new TextWebSocketFrame(backMessage));

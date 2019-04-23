@@ -1,13 +1,15 @@
 package com.example.entity;
+
 import java.util.Date;
 import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * 用户每次在线时长日志
+ *
  * @author qinxuewu
  * @version 1.00
- * @time  29/3/2019 下午 5:46
+ * @time 29/3/2019 下午 5:46
  * @email 870439570@qq.com
  */
 
@@ -19,17 +21,17 @@ public class SysUserOnlineLog implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long	id;
-    private String	account;				//目标用户账号
+    private Long id;
+    private String account;                //目标用户账号
 
     private Date startTime;      //上线时间
     private Date endTime;        //下线时间
     private String countTime;   //在线总时长  单位秒
-    private String  sessionId;      //会话sessionId
-    private Long	mostsignbits;			//socketio-mostsignbits
-    private Long	leastsignbits;			//socketio-leastsignbits
-    private  String remoteAddress;   //远程客户端地址
-    private  String source;  //页面来源
+    private String sessionId;      //会话sessionId
+    private Long mostsignbits;            //socketio-mostsignbits
+    private Long leastsignbits;            //socketio-leastsignbits
+    private String remoteAddress;   //远程客户端地址
+    private String source;  //页面来源
 
 
     public Long getId() {

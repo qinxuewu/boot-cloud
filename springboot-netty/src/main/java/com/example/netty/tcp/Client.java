@@ -1,4 +1,5 @@
 package com.example.netty.tcp;
+
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -13,18 +14,19 @@ import io.netty.util.ReferenceCountUtil;
 
 /**
  * tcp粘包 拆包  客户端
+ *
  * @author qinxuewu
  * @version 1.00
  * @time 11/10/2018下午 2:11
  */
 public class Client {
     //消息响应处理
-    public static  class ClientHander extends ChannelHandlerAdapter{
+    public static class ClientHander extends ChannelHandlerAdapter {
 
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
             try {
-                String response = (String)msg;
+                String response = (String) msg;
                 System.out.println("客户端收到消息: " + response);
             } finally {
                 // 抛弃收到的数据
@@ -39,9 +41,9 @@ public class Client {
     }
 
 
-    public static void main(String[] args) throws  Exception{
-        EventLoopGroup group=new NioEventLoopGroup();
-        Bootstrap b=new Bootstrap();
+    public static void main(String[] args) throws Exception {
+        EventLoopGroup group = new NioEventLoopGroup();
+        Bootstrap b = new Bootstrap();
         b.group(group).channel(NioSocketChannel.class).handler(new ChannelInitializer<SocketChannel>() {
             @Override
             protected void initChannel(SocketChannel socketChannel) {

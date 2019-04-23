@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-	@Value("${server.port}")
-	String port;
-	@Value("${spring.application.name}")
-	 String name;
+    @Value("${server.port}")
+    String port;
+    @Value("${spring.application.name}")
+    String name;
 
-	@RequestMapping("/hello")
-	public String hello() {
+    @RequestMapping("/hello")
+    public String hello() {
 
-		return "hello world ! I'm :" + name + ":" + port;
-	}
+        return "hello world ! I'm :" + name + ":" + port;
+    }
 }

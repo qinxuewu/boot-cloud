@@ -20,10 +20,11 @@ import org.springframework.stereotype.Component;
 
 /**
  * KafkaAdminClient 集群管理工具
+ *
  * @author qxw
  * @data 2018年8月7日下午5:51:06
  * https://blog.csdn.net/u013256816/article/details/79996056
- * 
+ * <p>
  * 创建Topic：createTopics(Collection<NewTopic> newTopics)
  * 删除Topic：deleteTopics(Collection<String> topics)
  * 罗列所有Topic：listTopics()
@@ -43,41 +44,39 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaAdminClient {
 
-	private static final String NEW_TOPIC = "topic-test2";
-	private static final String brokerUrl = "localhost:9092";
-	private static AdminClient adminClient;
+    private static final String NEW_TOPIC = "topic-test2";
+    private static final String brokerUrl = "localhost:9092";
+    private static AdminClient adminClient;
 
-	
-	public static void beforeClass(){
-	    Properties properties = new Properties();
-	    properties.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, brokerUrl);
-	    adminClient = AdminClient.create(properties);
-	}
-	
-	public static void afterClass(){
-	    adminClient.close();
-	}
-	
-	
-	public static void createTopics() {
-		try {
-			System.out.println("=============");
-		    NewTopic newTopic = new NewTopic(NEW_TOPIC,4, (short) 1);
-		    Collection<NewTopic> newTopicList = new ArrayList<>();
-		    newTopicList.add(newTopic);
-		    adminClient.createTopics(newTopicList);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	
-	}
-	
-	
-	
-	
-	public static void main(String[] args) {
-		beforeClass();
-		createTopics();
-		afterClass();
-	}
+
+    public static void beforeClass() {
+        Properties properties = new Properties();
+        properties.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, brokerUrl);
+        adminClient = AdminClient.create(properties);
+    }
+
+    public static void afterClass() {
+        adminClient.close();
+    }
+
+
+    public static void createTopics() {
+        try {
+            System.out.println("=============");
+            NewTopic newTopic = new NewTopic(NEW_TOPIC, 4, (short) 1);
+            Collection<NewTopic> newTopicList = new ArrayList<>();
+            newTopicList.add(newTopic);
+            adminClient.createTopics(newTopicList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+        beforeClass();
+        createTopics();
+        afterClass();
+    }
 }
