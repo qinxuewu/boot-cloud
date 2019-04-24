@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+# Mybatis 配置
+mybatis:
+  typeAliasesPackage: com.company.shardingjdbc.domain
+  mapperLocations: classpath:mapper/*.xml
+  configuration.map-underscore-to-camel-case: true
+
+# 打印mybatis中的sql语句和结果集
+logging:
+  level.com.company.shardingjdbc.mapper: TRACE

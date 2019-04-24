@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.company.shardingjdbc.mapper.OrderMapper" >
+
+    <select id="queryById" parameterType="Long" resultType="Order">
+        SELECT * FROM t_order WHERE order_id IN
+        <foreach collection="orderIdList" item="orderId" open="(" separator="," close=")">
+            #{orderId}
+        </foreach>
+    </select>
+
+    <insert id="insert" parameterType="Order">
+        INSERT INTO t_order (order_id, user_id) VALUES (#{orderId}, #{userId})
+    </insert>
+
+</mapper>
