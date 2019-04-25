@@ -1,0 +1,47 @@
+server:
+  port: 9900
+spring:
+  application:
+    name: shard-jdbc-starter
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.sun.shard.bean
+sharding:
+  jdbc:
+    datasource:
+      names: ds0,ds1
+      ds0: 
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/order1
+        username: root
+        password: 123456
+      ds1: 
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/order2
+        username: root
+        password: 123456
+    config:
+      sharding:
+        props:
+          sql.show: true
+        tables:
+          t_user:
+            key-generator-column-name: id 
+            actual-data-nodes: ds${0..1}.t_user${0..1}
+            database-strategy: 
+              inline:
+                sharding-column: city_id
+                algorithm-expression: ds${city_id % 2}
+            table-strategy: 
+              inline:
+                shardingColumn: sex
+                algorithm-expression: t_user${sex % 2}
+          t_address: 
+            key-generator-column-name: id
+            actual-data-nodes: ds${0..1}.t_address
+            database-strategy: 
+              inline:
+                shardingColumn: lit
+                algorithm-expression: ds${lit % 2}

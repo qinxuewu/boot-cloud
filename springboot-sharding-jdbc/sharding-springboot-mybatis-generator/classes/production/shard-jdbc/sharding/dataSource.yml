@@ -1,0 +1,42 @@
+dataSources:
+  ds0: !!com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/order1
+    username: root
+    password: root
+  ds1: !!com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/order2
+    username: root
+    password: root
+shardingRule:  
+  tables:
+    t_user: 
+      actualDataNodes: ds${0..1}.t_user${0..1}
+      databaseStrategy:
+        inline:
+          shardingColumn: city_id
+          algorithmExpression: ds${city_id % 2}
+      tableStrategy: 
+        inline:
+          shardingColumn: sex
+          algorithmExpression: t_user${sex % 2}
+      keyGeneratorColumnName: id
+    t_address: 
+      actualDataNodes: ds${0..1}.t_address
+      databaseStrategy: 
+        inline:
+          shardingColumn: lit
+          algorithmExpression: ds${lit % 2}
+      keyGeneratorColumnName: id
+  bindingTables:
+    - t_user,t_address
+  defaultDataSourceName: ds0
+  defaultDatabaseStrategy:
+    inline:
+      shardingColumn: id
+      algorithmExpression: ds${id % 2}
+  defaultTableStrategy:
+    none:
+  props:
+    sql.show: true
