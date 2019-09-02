@@ -1,8 +1,5 @@
 package com.github.api;
-import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.ZooDefs;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,12 +29,29 @@ public class ZkApi {
     /**
      * 判断指定节点是否存在
      * @param path
-     * @param needWatch
+     * @param needWatch  指定是否复用zookeeper中默认的Watcher
      * @return
      */
     public Stat exists(String path, boolean needWatch){
         try {
             return zkClient.exists(path,needWatch);
+        } catch (Exception e) {
+            logger.error("【断指定节点是否存在异常】{},{}",path,e);
+            return null;
+        }
+    }
+
+    /**
+     *  检测结点是否存在 并设置监听事件
+     *      三种监听类型： 创建，删除，更新
+     *
+     * @param path
+     * @param watcher  传入指定的监听类
+     * @return
+     */
+    public Stat exists(String path,Watcher watcher ){
+        try {
+            return zkClient.exists(path,watcher);
         } catch (Exception e) {
             logger.error("【断指定节点是否存在异常】{},{}",path,e);
             return null;
@@ -106,10 +120,10 @@ public class ZkApi {
      * @param path
      * @return
      */
-    public  String getData(String path){
+    public  String getData(String path,Watcher watcher){
         try {
             Stat stat=new Stat();
-            byte[] bytes=zkClient.getData(path,null,stat);
+            byte[] bytes=zkClient.getData(path,watcher,stat);
             return  new String(bytes);
         }catch (Exception e){
             e.printStackTrace();
@@ -123,8 +137,15 @@ public class ZkApi {
      */
     @PostConstruct
     public  void init(){
+        String path="/zk-watcher-2";
         logger.info("【执行初始化测试方法。。。。。。。。。。。。】");
-        createNode("/zk-test","测试");
+        createNode(path,"测试");
+        String value=getData(path,new WatcherApi());
+        logger.info("【执行初始化测试方法getData返回值。。。。。。。。。。。。】={}",value);
+
+        // 删除节点出发 监听事件
+        deleteNode(path);
+
     }
 
 }
