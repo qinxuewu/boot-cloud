@@ -59,6 +59,45 @@ public class ZkApi {
     }
 
     /**
+     *  创建节点 指定节点类型
+     *
+     *     持久（PERSISTENT）
+     *     持久顺序（PERSISTENT_SEQUENTIAL）
+     *     临时（EPHEMERAL）
+     *     临时顺序（EPHEMERAL_SEQUENTIAL）
+     * @param path
+     * @param data
+     * @param type  节点类型 1=持久 2=持久顺序 3=临时 4=临时顺序
+     * @return
+     *
+     */
+    public String create(String path, String data,int type){
+        String value="";
+        try {
+            switch (type){
+                case 1:
+                   value=zkClient.create(path,data.getBytes(),ZooDefs.Ids.OPEN_ACL_UNSAFE,CreateMode.PERSISTENT);
+                   break;
+                case 2:
+                    value=zkClient.create(path,data.getBytes(),ZooDefs.Ids.OPEN_ACL_UNSAFE,CreateMode.PERSISTENT_SEQUENTIAL);
+                    break;
+                case 3:
+                    value=zkClient.create(path,data.getBytes(),ZooDefs.Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL);
+                    break;
+                case 4:
+                    value=zkClient.create(path,data.getBytes(),ZooDefs.Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
+                    break;
+                default:
+            }
+        }catch (Exception e){
+            logger.error("【创建节点异常】{},{},{},{}",path,data,type,e);
+        }
+      return value;
+
+    }
+
+
+    /**
      * 创建持久化节点
      * @param path
      * @param data
