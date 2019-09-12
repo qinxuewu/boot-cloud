@@ -1,0 +1,36 @@
+version: '3' #使用第三代语法来构建
+services:  # 需要启动的服务
+  nginx:
+    container_name: v-nginx #容器名称
+    image: nginx:1.13
+    restart: always   #表示如果服务启动不成功会一直尝试。
+    ports:     #表示对外开放的端口
+      - 80:80
+      - 443:443
+    volumes: #加载本地目录下的配置文件到容器目标地址下
+      - ./nginx/conf.d:/etc/nginx/conf.d
+
+  mysql:
+    container_name: v-mysql  #容器名称
+    image: mysql/mysql-server:5.7
+    environment:  # 此节点下的信息会当作环境变量传入容器
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "3306:3306"
+    restart: always    #表示如果服务启动不成功会一直尝试。
+
+  app:
+    restart: always   #表示如果服务启动不成功会一直尝试。
+    build: ./app
+    working_dir: /app
+    volumes:
+      - ./app:/app
+      - ~/.m2:/root/.m2
+    expose:
+      - "8080"
+    depends_on:  #可以配置依赖服务，表示需要先启动 depends_on 下面的服务后，再启动本服务
+      - nginx
+      - mysql
+    command: mvn clean spring-boot:run -Dspring-boot.run.profiles=docker #表示使用 application-docker.properties文件配置信息进行启动
