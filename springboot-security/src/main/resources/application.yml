@@ -1,0 +1,30 @@
+# Tomcat配置
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 200
+    min-spare-threads: 10
+    max-connections: 5000
+  servlet:
+    session:
+      timeout:  3600  # Session的有效期为一个小时
+spring:
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://129.204.236.147:3306/boot-security?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: qinxue420923
+
+
+mybatis:
+  # mapper-locations: mapper/*Mapper.xml # 暂时不需要 xml 方式
+  type-aliases-package: com.github.entity
+  configuration:
+    map-underscore-to-camel-case: true
+

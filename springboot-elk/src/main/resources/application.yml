@@ -1,0 +1,18 @@
+# Tomcat配置
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 200
+    min-spare-threads: 10
+    max-connections: 5000
+spring:
+  application:
+    name: springboot-elk
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+
+
