@@ -1,6 +1,6 @@
 # Tomcat配置
 server:
-  port: 80
+  port: 8088
   tomcat:
     uri-encoding: UTF-8
     max-threads: 200

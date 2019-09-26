@@ -177,4 +177,31 @@ public class AliPayService {
             return R.error("支付宝PC支付下单接口异常");
         }
     }
+
+    /**
+     * 单笔转账到支付宝账户接口
+     * @link  https://docs.open.alipay.com/api_28/alipay.fund.trans.toaccount.transfer
+     * @param parameter
+     * @return
+     */
+    public R toaccountTransfer(JSONObject parameter) {
+        try {
+            //创建API对应的request类
+            AlipayFundTransToaccountTransferRequest request = new AlipayFundTransToaccountTransferRequest();
+            //后台回调
+            request.setNotifyUrl(notifyUrl);
+            //设置业务参数
+            request.setBizContent(parameter.toJSONString());
+            AlipayFundTransToaccountTransferResponse response = alipayClient.execute(request);
+            if(response.isSuccess()){
+                log.info("调用成功,{}",response);
+            } else {
+                log.info("调用失败,{}",response.getBody());
+            }
+            return  R.ok().put("data",JSONObject.parseObject(response.getBody()));
+        }catch (AlipayApiException e){
+            log.error("toaccountTransfer={},{}",e,parameter);
+            return R.error("单笔转账到支付宝账户接口异常");
+        }
+    }
 }

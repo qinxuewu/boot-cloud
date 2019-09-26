@@ -10,6 +10,7 @@ import com.github.modules.allipay.util.AliPayUtil;
 import com.github.utils.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ import java.util.Map;
  * @since 1.0.0
  */
 @Api(tags ="支付宝支付")
-@Controller
+@RestController
 @RequestMapping(value = "alipay")
 public class AliliPayController {
     private static final Logger logger = LoggerFactory.getLogger(AliliPayController.class);
@@ -161,7 +162,7 @@ public class AliliPayController {
                     logger.info(outtradeno + "订单的状态已经关闭");
 
                 } else if ("TRADE_SUCCESS".equals(status) || "TRADE_FINISHED".equals(status)) {
-                    // 如果状态是已经支付成功
+                     // 如果状态是已经支付成功
                     logger.info("(支付宝订单号:"+outtradeno+"付款成功)");
                 } else {
                     //这里 根据实际业务场景 做相应的操作
@@ -177,4 +178,38 @@ public class AliliPayController {
         out.close();
     }
 
+
+    /**
+     * 统一收单交易支付接口（条码支付）
+     * @return
+     */
+    @ApiOperation(value = "单笔转账到支付宝账户接口", notes = "单笔转账到支付宝账户接口")
+    @PostMapping("/api/toaccountTransfer")
+    public R toaccountTransfer(
+            @ApiParam(name = "payee_type", value = "收款方账户类型:1、ALIPAY_USERID：支付宝账号对应的支付宝唯一用户号。以2088开头的16位纯数字组成。2、ALIPAY_LOGONID：支付宝登录号，支持邮箱和手机号格式。")
+            @RequestParam(required = true, value = "payee_type") String payee_type,
+            @ApiParam(name = "payee_account", value = "收款方账户,与payee_type配合使用。付款方和收款方不能是同一个账户。")
+            @RequestParam(required = true, value = "payee_account") String payee_account,
+            @ApiParam(name = "amount", value = "转账金额，单位：元,只支持2位小数。金额必须大于等于0.1元。最大转账金额以实际签约的限额为准。")
+            @RequestParam(required = true, value = "amount") String amount
+//            @ApiParam(name = "payer_show_name", value = "付款方姓名,如果该字段不传，则默认显示付款方的支付宝认证姓名或单位名称。")
+//            @RequestParam(value = "payer_show_name") String payer_show_name,
+//            @ApiParam(name = "payee_real_name", value = "收款方真实姓名（最长支持100个英文/50个汉字）。")
+//            @RequestParam(value = "payee_real_name") String payee_real_name,
+//            @ApiParam(name = "remark", value = "转账备注（支持200个英文/100个汉字）。当付款方为企业账户，且转账金额达到（大于等于）50000元，remark不能为空")
+//            @RequestParam(value = "remark") String remark
+    ) {
+        JSONObject parameter=new JSONObject();
+        String outTradeNo = "toaccountTransfer" + System.currentTimeMillis() + (long) (Math.random() * 10000000L);
+        // 商户转账唯一订单号。发起转账来源方定义的转账单据ID，用于将转账回执通知给来源方。
+        parameter.put("out_biz_no",outTradeNo);
+        parameter.put("payee_type",payee_type);
+        parameter.put("payee_account",payee_account);
+        parameter.put("amount",amount);
+//        parameter.put("payer_show_name",payer_show_name);
+//        parameter.put("payee_real_name",payee_real_name);
+//        parameter.put("remark",remark);
+        logger.info("请求参数:{}",parameter);
+        return aliPayService.toaccountTransfer(parameter);
+    }
 }
