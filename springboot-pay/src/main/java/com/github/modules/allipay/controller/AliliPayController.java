@@ -2,11 +2,10 @@ package com.github.modules.allipay.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.internal.util.AlipaySignature;
-import com.alipay.demo.trade.config.Configs;
-import com.github.model.Product;
+import com.github.config.AliPayConfig;
 import com.github.modules.allipay.service.AliPayService;
-import com.github.modules.allipay.service.AliliPayService;
-import com.github.modules.allipay.util.AliPayUtil;
+import com.github.modules.allipay.util.TradePayBizContentRequest;
+
 import com.github.utils.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -15,7 +14,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +23,8 @@ import java.io.IOException;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 
 /**
  * 功能描述: 支付宝支付测试控制器
@@ -42,45 +42,12 @@ public class AliliPayController {
     @Value("${alipay.sign-type}")
     private  String signType;
     @Autowired
-    private AliliPayService aliliPayService;
-    @Autowired
     private AliPayService aliPayService;
-
-    /**
-     * 当面付2.0预下单(生成二维码)
-     * @return
-     */
-    @ApiOperation(value = "当面付2.0预下单(生成二维码)", notes = "当面付2.0预下单(生成二维码)")
-    @GetMapping("/api/tradePrecreate")
-    public R tradePrecreate() {
-        Product product=new Product();
-        String outTradeNo = "tradeprecreate" + System.currentTimeMillis() + (long) (Math.random() * 10000000L);
-        product.setOutTradeNo(outTradeNo);
-        product.setSubject("xxx品牌xxx门店当面付扫码消费");
-        product.setTotalFee("0.01");
-        product.setBody("购买商品3件共20.00元");
-        int status=aliliPayService.aliPayTradePrecreate(product,null,"test_operator_id");
-        return R.ok().put("status",status);
-    }
-    /**
-     * 当面付2.0预下单(条码支付)
-     * @return
-     */
-    @ApiOperation(value = "当面付2.0预下单(条码支付)", notes = "当面付2.0预下单(条码支付)")
-    @PostMapping("/api/tradePay")
-    public R tradePay(@RequestParam(value = "authCode", required = true) String authCode) {
-        Product product=new Product();
-        String outTradeNo = "tradeprecreate" + System.currentTimeMillis() + (long) (Math.random() * 10000000L);
-        product.setOutTradeNo(outTradeNo);
-        product.setSubject("xxx品牌xxx门店当面付扫码消费");
-        product.setTotalFee("0.01");
-        product.setBody("购买商品3件共20.00元");
-        int status=aliliPayService.tradePay(product, AliPayUtil.getAlipayTradeService(),authCode,null);
-        return R.ok().put("status",status);
-    }
+    @Autowired
+    private AliPayConfig aliPayConfig;
 
 
-    //---------------------------------------------分隔线 以下不使用用支付宝提供的SDK demo------------------------------------
+
 
 
     /**
@@ -89,24 +56,20 @@ public class AliliPayController {
      */
     @ApiOperation(value = "统一收单交易支付接口（条码支付）", notes = "统一收单交易支付接口（条码支付）")
     @PostMapping("/api/tradeAliPay")
-    public R tradeAliPay(@RequestParam(value = "authCode", required = true) String authCode) {
-         JSONObject parameter=new JSONObject();
+    public R tradeAliPay(@RequestParam(value = "authCode", required = true) String authCode) throws JsonProcessingException {
+         TradePayBizContentRequest request=new TradePayBizContentRequest();
+
          String outTradeNo = "tradeprecreate" + System.currentTimeMillis() + (long) (Math.random() * 10000000L);
          // 商户订单号，需要保证不重
-         parameter.put("out_trade_no",outTradeNo);
-         // 条码支付固定传入 bar_code
-         parameter.put("scene","bar_code");
-         // 即用户在支付宝客户端内出示的付款码，使用一次即失效，需要刷新后再去付款
-         parameter.put("auth_code",authCode);
-         // 商品描述
-         parameter.put("subject","xxx品牌xxx门店当面付扫码消");
-         // (必填) 商户门店编号，通过门店号和商家后台可以配置精准到门店的折扣信息，详询支付宝技术支持
-         parameter.put("store_id","test_store_id");
-        // 支付超时，线下扫码交易定义为5分钟
-         parameter.put("timeout_express","5m");
-         // (必填) 订单总金额，单位为元，不能超过1亿元
-         parameter.put("total_amount","0.01");
-         return aliPayService.tradePay(parameter);
+        request.setOutTradeNo(outTradeNo);
+        // 条码支付固定传入 bar_code
+        request.setScene("bar_code");
+        // 即用户在支付宝客户端内出示的付款码，使用一次即失效，需要刷新后再去付款
+        request.setAuthCode(authCode);
+        // 商品描述
+        request.setSubject("xxx品牌xxx门店当面付扫码消");
+        request.setTotalAmount("0.01");
+         return R.ok().put("data",aliPayService.tradePay(request));
     }
 
 
@@ -146,7 +109,7 @@ public class AliliPayController {
         if (signVerified) {
             logger.info("支付宝验证签名成功！");
             // 若参数中的appid和填入的appid不相同，则为异常通知
-            if (!Configs.getAppid().equals(params.get("app_id"))) {
+            if (!aliPayConfig.getAppid().equals(params.get("app_id"))) {
                 logger.info("与付款时的appid不同，此为异常通知，应忽略！");
                 message =  "failed";
             }else{
@@ -180,7 +143,7 @@ public class AliliPayController {
 
 
     /**
-     * 统一收单交易支付接口（条码支付）
+     * 单笔转账到支付宝账户接
      * @return
      */
     @ApiOperation(value = "单笔转账到支付宝账户接口", notes = "单笔转账到支付宝账户接口")
@@ -211,5 +174,19 @@ public class AliliPayController {
 //        parameter.put("remark",remark);
         logger.info("请求参数:{}",parameter);
         return aliPayService.toaccountTransfer(parameter);
+
     }
+
+    /**
+     * 单笔转账到支付宝账户接
+     * @return
+     */
+    @ApiOperation(value = "统一收单线下交易查询", notes = "单笔转账到支付宝账户接口")
+    @PostMapping("/api/tradeQuery")
+    public R tradeQuery(@ApiParam(name = "outTradeNo") @RequestParam(required = true, value = "outTradeNo") String outTradeNo) {
+        return R.ok(aliPayService.tradeQuery(outTradeNo));
+    }
+
+
+
 }

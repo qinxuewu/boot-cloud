@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AliPayConfig {
-    private static final Logger logger = LoggerFactory.getLogger(AliPayConfig.class);
     /** 支付宝openapi域名 **/
     @Value("${alipay.open-api-domain}")
     private  String openApiDomain;
@@ -73,6 +72,10 @@ public class AliPayConfig {
     @Value("${alipay.heartbeat-duration}")
     private  long heartbeatDuration ;
 
+
+    public String getAppid() {
+        return appid;
+    }
 
     /**
      * 支付宝客户端

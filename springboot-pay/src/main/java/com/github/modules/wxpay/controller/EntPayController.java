@@ -3,10 +3,14 @@ package com.github.modules.wxpay.controller;
 import com.github.binarywang.wxpay.bean.entpay.*;
 import com.github.binarywang.wxpay.exception.WxPayException;
 import com.github.binarywang.wxpay.service.WxPayService;
+import com.github.binarywang.wxpay.util.SignUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.catalina.Lifecycle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 /**
  * 功能描述: 微信企业付款
@@ -38,6 +42,15 @@ public class EntPayController {
         @ApiOperation(value = "企业付款到零钱")
         @PostMapping("/entPay")
         public EntPayResult entPay(@RequestBody EntPayRequest request) throws WxPayException {
+            request.setMchAppid(wxService.getConfig().getAppId());
+            request.setNonceStr(UUID.randomUUID().toString());
+            request.setPartnerTradeNo("41242513416512412");
+            request.setOpenid("oRADx0LtEu9zrT0FrSA6IDCakoiQ");
+            request.setCheckName("NO_CHECK");
+            request.setAmount(30);
+            request.setDescription("测试");
+            request.setSpbillCreateIp("192.168.0.1");
+            request.setSign(SignUtils.createSign(request,"MD5",wxService.getConfig().getMchId(),null));
             return this.wxService.getEntPayService().entPay(request);
         }
 

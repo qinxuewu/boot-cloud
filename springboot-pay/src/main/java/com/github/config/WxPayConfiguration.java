@@ -2,7 +2,6 @@ package com.github.config;
 import com.github.binarywang.wxpay.config.WxPayConfig;
 import com.github.binarywang.wxpay.service.WxPayService;
 import com.github.binarywang.wxpay.service.impl.WxPayServiceImpl;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -48,7 +47,7 @@ public class WxPayConfiguration {
     /**
      * apiclient_cert.p12文件的绝对路径，或者如果放在项目中，请以classpath:开头指定
      */
-    @Value("${wx.pay.subMchId}")
+    @Value("${wx.pay.keyPath}")
     private String keyPath;
 
     @Bean
@@ -58,15 +57,15 @@ public class WxPayConfiguration {
         payConfig.setAppId(appId);
         payConfig.setMchId(mchId);
         payConfig.setMchKey(mchKey);
-        payConfig.setSubAppId(subAppId);
-        payConfig.setSubMchId(subMchId);
+//        payConfig.setSubAppId(subAppId);
+//        payConfig.setSubMchId(subMchId);
         payConfig.setKeyPath(keyPath);
 
-        // 可以指定是否使用沙箱环境
-        payConfig.setUseSandboxEnv(false);
 
         WxPayService wxPayService = new WxPayServiceImpl();
         wxPayService.setConfig(payConfig);
         return wxPayService;
+
+
     }
 }

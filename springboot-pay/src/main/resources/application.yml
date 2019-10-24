@@ -1,6 +1,6 @@
 # Tomcat配置
 server:
-  port: 8088
+  port: 8089
   tomcat:
     uri-encoding: UTF-8
     max-threads: 200
@@ -49,9 +49,9 @@ logging:
 # 微信支付参数
 wx:
   pay:
-    appId: #微信公众号或者小程序等的appid
-    mchId: #微信支付商户号
-    mchKey: #微信支付商户密钥
+    appId: xxxxx #微信公众号或者小程序等的appid
+    mchId: xxxxxx #微信支付商户号
+    mchKey: xxxxxx #微信支付商户密钥
     subAppId: #服务商模式下的子商户公众账号ID
     subMchId: #服务商模式下的子商户号
-    keyPath: # p12证书的位置，可以指定绝对路径，也可以指定类路径（以classpath:开头）
+    keyPath: classpath:apiclient_cert.p12  # p12证书的位置，
