@@ -1,0 +1,3 @@
+JMH S 19 com.github.JmhTest1 S 46 com.github.generated.JmhTest1_sayHello_jmhTest S 8 sayHello S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E U 12 MILLISECONDS E E 
+JMH S 19 com.github.JmhTest2 S 55 com.github.generated.JmhTest2_StringBuilderMode_jmhTest S 17 StringBuilderMode S 10 Throughput E A 1 1 1 E I 1 5 T 4 1 ms E I 2 10 T 3 5 s E E E E E E E M 1 6 number 3 2 10 3 100 4 1000 U 7 SECONDS E E 
+JMH S 19 com.github.JmhTest2 S 51 com.github.generated.JmhTest2_StringAddMode_jmhTest S 13 StringAddMode S 10 Throughput E A 1 1 1 E I 1 5 T 4 1 ms E I 2 10 T 3 5 s E E E E E E E M 1 6 number 3 2 10 3 100 4 1000 U 7 SECONDS E E 
