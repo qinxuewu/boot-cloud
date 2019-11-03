@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cf5e78c9-f931-4e46-8f31-d5f702c2b9fa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../springboot-elk/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-elk/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-elk/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/entity/SysPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/entity/SysRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/entity/SysUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/entity/SysUserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/mapper/SysPermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/mapper/SysRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/mapper/SysUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/mapper/SysUserRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/security/AuthenticationAccessDeniedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/security/AuthenticationFailureHandlerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/security/AuthenticationSuccessHandlerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/security/LogOutSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/security/MyAuthenticationProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/security/MyPasswordEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/security/MyUserDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/java/com/github/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/resources/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-security/src/main/resources/templates/login.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven\repository" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Qj5wxrOX2P7JAuvF8A2c0FKflu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf5e78c9-f931-4e46-8f31-d5f702c2b9fa" name="Default Changelist" comment="" />
+      <created>1568271406139</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568271406139</updated>
+      <workItem from="1568271409168" duration="281000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
