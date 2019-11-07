@@ -99,6 +99,7 @@ public class CacheServiceImpl implements CacheService{
     @Override
     public void saveProductInfo2ReidsCache(ProductInfo productInfo) {
         String key = "product_info_" + productInfo.getId();
+
         redisTemplate.opsForValue().set(key, JSONObject.toJSONString(productInfo));
     }
 

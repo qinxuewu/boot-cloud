@@ -60,6 +60,11 @@ mybatis:
   mapperLocations: classpath:mybatis/mapper/*Mapper.xml
   configLocation: classpath:mybatis/mybatis-config.xml
 
+# zk
+zookeeper:
+  address: 127.0.0.1:2181
+  timeout: 400
+
 logging:
   level:
     org.springframework: INFO
