@@ -128,3 +128,29 @@ fWorld.subscribe(new Observer<String>() {
 
 });
 ```
+
+### Hystrix常用方法
+- HystrixCommand：是用来获取一条数据的
+- HystrixObservableCommand：是设计用来获取多条数据的
+- 同步执行：`new CommandHelloWorld("World").execute()`，`new ObservableCommandHelloWorld("World").toBlocking().toFuture().get()`
+- 异步执行：`new CommandHelloWorld("World").queue()`，`new ObservableCommandHelloWorld("World").toBlocking().toFuture()`
+- 对command调用queue()，仅仅将command放入线程池的一个等待队列，就立即返回，拿到一个Future对象，后面可以做一些其他的事情，然后过一段时间对future调用get()方法获取数据
+
+### Hystrix不同的执行方式
+- execute()，获取一个 Future.get()，然后拿到单个结果。
+- queue()，返回一个 Future。
+- observe()，立即订阅 Observable，然后启动 8 大执行步骤，返回一个拷贝的 - Observable，订阅时立即回调给你结果。
+- toObservable()，返回一个原始的 Observable，必须手动订阅才会去执行 8 大步骤。
+
+### Hystrixz执行的整个工作流程
+![hystrix执行流程.png](http://ww1.sinaimg.cn/large/0068QeGHgy1g8vcnody2jj30dc0he75g.jpg)
+
+- 步骤一：创建 command,一个 HystrixCommand 或 HystrixObservableCommand 对象，代表了对某个依赖服务发起的一次请求或者调用。创建的时候，可以在构造函数中传入任何需要的参数。
+- 步骤二：调用 command执行方法,执行command，就可以发起一次对依赖服务的调用。要执行 command，可以在4个方法中选择其中的一个：execute()、queue()、observe()、toObservable()。
+- 步骤三：检查是否开启缓存，如果这个 command 开启了请求缓存 Request Cache，而且这个调用的结果在缓存中存在，那么直接从缓存中返回结果。否则，继续往后的步骤
+- 步骤四：检查是否开启了断路器，检查这个command对应的依赖服务是否开启了断路器。如果断路器被打开了，那么Hystrix就不会执行这个command，而是直接去执行 fallback 降级机制，返回降级结果。
+- 步骤五：检查线程池/队列/信号量是否已满，如果这个command线程池和队列已满，或者 semaphore 信号量已满，那么也不会执行 command，而是直接去调用 fallback 降级机制，同时发送 reject 信息给断路器统计。
+- 步骤六：执行 command，调用 HystrixObservableCommand 对象的construct() 方法，或者 HystrixCommand 的 run() 方法来实际执行这个 command。
+- 步骤七：断路健康检查，Hystrix会把每一个依赖服务的调用成功、失败、Reject、Timeout 等事件发送给 circuit breaker 断路器。断路器就会对这些事件的次数进行统计，根据异常事件发生的比例来决定是否要进行断路（熔断）。如果打开了断路器，那么在接下来一段时间内，会直接断路，返回降级结果。
+- 步骤八：调用 fallback 降级机制，在以下几种情况中，Hystrix 会调用 fallback 降级机制。断路器处于打开状态；线程池/队列/semaphore满了；command 执行超时；run() 或者 construct() 抛出异常
+
