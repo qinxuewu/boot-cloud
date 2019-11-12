@@ -1,0 +1,30 @@
+server:
+  port: 8083
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 800
+    min-spare-threads: 30
+
+spring:
+#mysql
+  datasource:
+    url: jdbc:mysql://129.204.236.147:3306/eshop
+    username: root
+    password: qinxue420923
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+
+# MyBatis
+mybatis:
+  typeAliasesPackage: com.github.cache
+  mapperLocations: classpath:mybatis/mapper/*Mapper.xml
+  configLocation: classpath:mybatis/mybatis-config.xml
+
+
+
+logging:
+  level:
+    org.springframework: INFO
