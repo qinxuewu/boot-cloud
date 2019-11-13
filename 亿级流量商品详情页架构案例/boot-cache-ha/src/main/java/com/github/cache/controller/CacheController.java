@@ -1,5 +1,7 @@
 package com.github.cache.controller;
 import com.github.cache.http.HttpClientUtils;
+import com.github.cache.hystrix.GetBrandNameCommand;
+import com.github.cache.hystrix.GetCityNameCommand;
 import com.github.cache.hystrix.GetProductInfoCommand;
 import com.github.cache.hystrix.GetProductInfosCommand;
 import com.github.cache.model.ProductInfo;
@@ -56,6 +58,14 @@ public class CacheController {
         // 以同步堵塞方式执行
         // hystrix先创建一个新线程运行run()，接着调用程序要在execute()调用处一直堵塞着，直到run()运行完成
         ProductInfo productInfo = command.execute();
+
+        // 根据城市ID 获取城市名
+        Long cityId=productInfo.getCityId();
+        // 使用信号量隔离技术 限制请求数量
+        GetCityNameCommand getCityNameCommand = new GetCityNameCommand(cityId);
+        String cityName = getCityNameCommand.execute();
+        productInfo.setCityName(cityName);
+
         logger.info("【获取HystrixCommand同步阻塞返回的数据productInfo】={}",productInfo);
         return "success";
     }
@@ -117,5 +127,51 @@ public class CacheController {
             }
         });
         return  "success";
+    }
+
+
+    /**
+     *  一次性批量查询多条商品数据的请求
+     *  用request cache做一个优化 相同的商品查询只能执行一次，其余的都走request cache
+     *
+     * 请求： getProHystrixCache?productIds=1,1,1,2
+     * @param productIds
+     * @return
+     */
+    @RequestMapping("/getProHystrixCache")
+    @ResponseBody
+    public String getProHystrixCache(String productIds){
+        for(String productId : productIds.split(",")){
+            GetProductInfoCommand getProductInfoCommand = new GetProductInfoCommand(Long.valueOf(productId));
+            ProductInfo productInfo = getProductInfoCommand.execute();
+            logger.info("【一次性批量查询多条商品数据的请求】={}",productInfo);
+            logger.info("【一次性批量查询 是否走的request cache】={}",getProductInfoCommand.isResponseFromCache());;
+        }
+        return "success";
+    }
+
+
+    /**
+     * 降级
+     * @param productId
+     * @return
+     */
+    @RequestMapping("/getProFallback")
+    @ResponseBody
+    public String getProFallback(Long productId){
+        HystrixCommand<ProductInfo> getProductInfoCommand = new GetProductInfoCommand(productId);
+        ProductInfo productInfo = getProductInfoCommand.execute();
+
+        Long cityId = productInfo.getCityId();
+        GetCityNameCommand getCityNameCommand = new GetCityNameCommand(cityId);
+        String cityName = getCityNameCommand.execute();
+        productInfo.setCityName(cityName);
+
+        Long brandId = productInfo.getBrandId();
+        GetBrandNameCommand getBrandNameCommand = new GetBrandNameCommand(brandId);
+        String brandName = getBrandNameCommand.execute();
+        productInfo.setBrandName(brandName);
+        logger.info("【降级请求测试】={}",productInfo);
+        return "success";
     }
 }

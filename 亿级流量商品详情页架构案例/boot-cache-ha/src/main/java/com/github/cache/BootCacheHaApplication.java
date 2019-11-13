@@ -1,6 +1,9 @@
 package com.github.cache;
+import com.github.cache.filter.HystrixRequestContextFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
 
 
 /**
@@ -16,4 +19,15 @@ public class BootCacheHaApplication {
 		SpringApplication.run(BootCacheHaApplication.class, args);
 	}
 
+
+	/**
+	 * hystrix请求上下文过滤器
+	 * @return
+	 */
+//	@Bean
+//	public FilterRegistrationBean filterRegistrationBean() {
+//		FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new HystrixRequestContextFilter());
+//		filterRegistrationBean.addUrlPatterns("/*");
+//		return filterRegistrationBean;
+//	}
 }
