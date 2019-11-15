@@ -24,10 +24,10 @@ public class BootCacheHaApplication {
 	 * hystrix请求上下文过滤器
 	 * @return
 	 */
-//	@Bean
-//	public FilterRegistrationBean filterRegistrationBean() {
-//		FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new HystrixRequestContextFilter());
-//		filterRegistrationBean.addUrlPatterns("/*");
-//		return filterRegistrationBean;
-//	}
+	@Bean
+	public FilterRegistrationBean filterRegistrationBean() {
+		FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new HystrixRequestContextFilter());
+		filterRegistrationBean.addUrlPatterns("/*");
+		return filterRegistrationBean;
+	}
 }

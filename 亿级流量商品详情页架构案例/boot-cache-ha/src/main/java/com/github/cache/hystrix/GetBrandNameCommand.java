@@ -41,7 +41,7 @@ public class GetBrandNameCommand  extends HystrixCommand<String> {
 
     @Override
     protected String getFallback() {
-        logger.info("【getFallback从本地缓存获取过期的品牌数据】brandId=" + brandId);
+        logger.info("【getFallback降级-》从本地缓存获取过期的品牌数据】brandId=" + brandId);
         return BrandCache.getBrandName(brandId);
     }
 }
