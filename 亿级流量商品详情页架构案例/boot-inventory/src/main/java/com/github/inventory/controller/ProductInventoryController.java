@@ -38,7 +38,7 @@ public class ProductInventoryController {
 
     private static final Logger log = LoggerFactory.getLogger(ProductInventoryController.class);
     @Resource
-    private RequestAsyncProcessService requestAsyncProcessService;
+    private RequestAsyncProcessService  requestAsyncProcessService;
     @Resource
     private ProductInventoryService productInventoryService;
 

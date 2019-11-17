@@ -1,4 +1,3 @@
-
 server:
   port: 8081
   tomcat:
@@ -12,7 +11,7 @@ spring:
     type: ehcache
   ehcache:
   config: classpath:ehcache.xml
-  #mysql
+#mysql
   datasource:
     url: jdbc:mysql://129.204.236.147:3306/eshop
     username: root
@@ -33,9 +32,27 @@ spring:
         max-idle: 10
         min-idle: 5
         max-wait: -1
-
-
-
+# kafka
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092 #broker地址
+    #生产者配置
+    listener:
+      ack-mode: manual  #开启手动 ack
+    producer:
+      batch-size: 16 # 缓存的大小
+      retries: 0 #发送失败重试次数
+      buffer-memory: 33554432  #控制生产者可用的缓存总量
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: "all"     #指定了all将会阻塞消息，这种设置性能最低，但是是最可靠的。
+    #消费者配置
+    consumer:
+      auto-offset-reset: latest  #可选的值为latest, earliest, none
+      enable-auto-commit: false  #是否自动提交
+#      auto-commit-interva: 100  #消费者偏移自动提交给Kafka的频率（以毫秒为单位
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: test-consumer-group  #消费组
 
 # MyBatis
 mybatis:
@@ -43,6 +60,10 @@ mybatis:
   mapperLocations: classpath:mybatis/mapper/*Mapper.xml
   configLocation: classpath:mybatis/mybatis-config.xml
 
+# zk
+zookeeper:
+  address: 127.0.0.1:2181
+  timeout: 400
 
 logging:
   level:
