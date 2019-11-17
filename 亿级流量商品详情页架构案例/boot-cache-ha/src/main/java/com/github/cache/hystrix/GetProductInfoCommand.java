@@ -34,6 +34,7 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo> {
                 .andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.Setter()
                         // coreSize: 设置线程池的大小，默认是10
                         .withCoreSize(15)
+<<<<<<< HEAD
                         // 设置线程池的最大大小，只有在设置allowMaximumSizeToDivergeFromCoreSize的时候才能生效
                         .withMaximumSize(30)
                         // 允许线程池大小自动动态调整，设置为true之后，maxSize就生效了，此时如果一开始是coreSize个线程，随着并发量上来，那么就会自动获取新的线程，
@@ -41,6 +42,8 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo> {
                         .withAllowMaximumSizeToDivergeFromCoreSize(true)
                         // 设置保持存活的时间，单位是分钟，默认是1
                         .withKeepAliveTimeMinutes(1)
+=======
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
                         // queueSizeRejectionThreshold:控制queue满后reject的threshold，因为maxQueueSize不允许热修改，因此提供这个参数可以热修改，控制队列的最大大小
                         // HystrixCommand在提交到线程池之前，其实会先进入一个队列中，这个队列满了之后，才会reject  默认值是5
                         .withMaxQueueSize(12)

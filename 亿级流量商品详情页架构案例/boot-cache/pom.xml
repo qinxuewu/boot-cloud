@@ -114,6 +114,7 @@
 			<artifactId>curator-recipes</artifactId>
 			<version>4.2.0</version>
 		</dependency>
+<<<<<<< HEAD
 
         <!-- https://mvnrepository.com/artifact/com.netflix.hystrix/hystrix-core -->
         <dependency>
@@ -127,6 +128,8 @@
             <artifactId>hystrix-metrics-event-stream</artifactId>
             <version>1.5.18</version>
         </dependency>
+=======
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
 	</dependencies>
 
 	<build>

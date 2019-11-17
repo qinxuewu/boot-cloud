@@ -1,10 +1,16 @@
 package com.github.cache;
 import com.github.cache.filter.HystrixRequestContextFilter;
+<<<<<<< HEAD
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
+=======
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
 import org.springframework.context.annotation.Bean;
 
 
@@ -32,6 +38,7 @@ public class BootCacheHaApplication {
 		filterRegistrationBean.addUrlPatterns("/*");
 		return filterRegistrationBean;
 	}
+<<<<<<< HEAD
 
 	@Bean
 	public ServletRegistrationBean indexServletRegistration() {
@@ -39,4 +46,6 @@ public class BootCacheHaApplication {
 		registration.addUrlMappings("/hystrix.stream");
 		return registration;
 	}
+=======
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
 }

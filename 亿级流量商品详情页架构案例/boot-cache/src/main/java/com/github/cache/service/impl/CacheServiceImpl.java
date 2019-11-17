@@ -1,6 +1,9 @@
 package com.github.cache.service.impl;
 import com.alibaba.fastjson.JSONObject;
+<<<<<<< HEAD
 import com.github.cache.hystrix.GetProductInfoFromReidsCacheCommand;
+=======
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
 import com.github.cache.model.ProductInfo;
 import com.github.cache.model.ShopInfo;
 import com.github.cache.service.CacheService;
@@ -116,6 +119,7 @@ public class CacheServiceImpl implements CacheService{
 
     @Override
     public ProductInfo getProductInfoFromReidsCache(Long productId) {
+<<<<<<< HEAD
 //        String key = "product_info_" + productId;
 //        String json =   redisTemplate.opsForValue().get(key);
 //        return JSONObject.parseObject(json, ProductInfo.class);
@@ -124,6 +128,11 @@ public class CacheServiceImpl implements CacheService{
         GetProductInfoFromReidsCacheCommand cacheCommand=new GetProductInfoFromReidsCacheCommand(productId);
         return  cacheCommand.execute();
 
+=======
+        String key = "product_info_" + productId;
+        String json =   redisTemplate.opsForValue().get(key);
+        return JSONObject.parseObject(json, ProductInfo.class);
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
     }
 
     @Override

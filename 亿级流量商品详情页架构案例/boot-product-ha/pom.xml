@@ -8,7 +8,10 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
 	<groupId>com.github.product</groupId>
 	<artifactId>boot-product-ha</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -21,7 +24,10 @@
 	</properties>
 
 	<dependencies>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -48,6 +54,7 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
+<<<<<<< HEAD
 
 		<!--swagger2依赖-->
 		<dependency>
@@ -74,6 +81,8 @@
 			<artifactId>hystrix-core</artifactId>
 			<version>1.5.18</version>
 		</dependency>
+=======
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
 	</dependencies>
 
 	<build>
@@ -85,5 +94,8 @@
 		</plugins>
 	</build>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
 </project>
