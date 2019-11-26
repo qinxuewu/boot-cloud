@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureak-server" />
+        <module name="order-server" />
+        <module name="account-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="account-server" target="1.8" />
+      <module name="boot-seata" target="1.8" />
+      <module name="eureak-server" target="1.8" />
+      <module name="order-server" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="account-server" options="-parameters" />
+      <module name="boot-seata" options="" />
+      <module name="eureak-server" options="-parameters" />
+      <module name="order-server" options="-parameters" />
+    </option>
+  </component>
+</project>

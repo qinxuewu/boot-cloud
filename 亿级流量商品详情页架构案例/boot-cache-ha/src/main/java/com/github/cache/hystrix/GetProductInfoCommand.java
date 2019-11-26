@@ -34,29 +34,16 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo> {
                 .andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.Setter()
                         // coreSize: 设置线程池的大小，默认是10
                         .withCoreSize(15)
-<<<<<<< HEAD
-                        // 设置线程池的最大大小，只有在设置allowMaximumSizeToDivergeFromCoreSize的时候才能生效
-                        .withMaximumSize(30)
-                        // 允许线程池大小自动动态调整，设置为true之后，maxSize就生效了，此时如果一开始是coreSize个线程，随着并发量上来，那么就会自动获取新的线程，
-                        // 但是如果线程在keepAliveTimeMinutes内空闲，就会被自动释放掉
-                        .withAllowMaximumSizeToDivergeFromCoreSize(true)
-                        // 设置保持存活的时间，单位是分钟，默认是1
-                        .withKeepAliveTimeMinutes(1)
-=======
->>>>>>> 2c2c2bdfa9b80e3a50c462378e3c72473beea707
                         // queueSizeRejectionThreshold:控制queue满后reject的threshold，因为maxQueueSize不允许热修改，因此提供这个参数可以热修改，控制队列的最大大小
                         // HystrixCommand在提交到线程池之前，其实会先进入一个队列中，这个队列满了之后，才会reject  默认值是5
                         .withMaxQueueSize(12)
-                        // 如果withMaxQueueSize<withQueueSizeRejectionThreshold，那么取的是withMaxQueueSize，反之，取得是withQueueSizeRejectionThreshol
-                        // 线程池本身的大小，如果你不设置另外两个queue相关的参数，等待队列是关闭的
                         .withQueueSizeRejectionThreshold(15))
                 .andCommandPropertiesDefaults(HystrixCommandProperties.Setter()
-                        // 最少要有多少个请求时，才触发开启短路
-                        // 如果设置为20（默认值），那么在一个10秒的滑动窗口内，如果只有19个请求，即使这19个请求都是异常的，也是不会触发开启短路器的
+                        // 配置10s内请求数超过30个时熔断器开始生效
                         .withCircuitBreakerRequestVolumeThreshold(30)
-                        // 设置异常请求量的百分比，当异常请求达到这个百分比时，就触发打开短路器，默认是50，也就是50%
+                        //  配置错误比例>80%时开始熔断
                         .withCircuitBreakerErrorThresholdPercentage(40)
-                        // 设置在短路之后，需要在多长时间内直接reject请求，然后在这段时间之后，再重新导holf-open状态，尝试允许请求通过以及自动恢复，默认值是5000毫秒
+                        // 熔断器打开到关闭的时间窗长度
                         .withCircuitBreakerSleepWindowInMilliseconds(3000)
                         // 手动设置timeout时长 默认是1000，也就是1000毫秒
                         .withExecutionTimeoutInMilliseconds(500)
@@ -75,9 +62,7 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo> {
         if(productId.equals(-2L)) {
             Thread.sleep(3000);
         }
-        if(productId.equals(-3L)) {
-			Thread.sleep(500);
-        }
+
         String url = "http://127.0.0.1:8083/getProductInfo?productId=" + productId;
         String response = HttpClientUtils.sendGetRequest(url);
         return JSONObject.parseObject(response, ProductInfo.class);
@@ -104,11 +89,8 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo> {
 
     @Override
     protected ProductInfo getFallback() {
-//        ProductInfo productInfo = new ProductInfo();
-//        productInfo.setName("降级商品");
-//        return productInfo;
-        // 多级降级策略
-        return new FirstLevelFallbackCommand(productId).execute();
-
+        ProductInfo productInfo = new ProductInfo();
+        productInfo.setName("降级商品");
+        return productInfo;
     }
 }

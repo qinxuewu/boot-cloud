@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/account-server/account-server.iml" filepath="$PROJECT_DIR$/account-server/account-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot-seata.iml" filepath="$PROJECT_DIR$/boot-seata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureak-server/eureak-server.iml" filepath="$PROJECT_DIR$/eureak-server/eureak-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-server/order-server.iml" filepath="$PROJECT_DIR$/order-server/order-server.iml" />
+    </modules>
+  </component>
+</project>
