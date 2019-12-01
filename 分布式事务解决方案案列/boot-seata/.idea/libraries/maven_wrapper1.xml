@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="maven-wrapper1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../boot-rocketmq-transactional/account-server/.mvn/wrapper/maven-wrapper.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

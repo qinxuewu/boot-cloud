@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 
 
@@ -37,6 +39,7 @@ public class OrderServiceImpl implements  OrderService {
      * 2.不添加本地事务：创建订单，扣减库存
      */
     @Override
+    @Transactional
     @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)
     public void create(Order order) {
         LOGGER.info("------->交易开始");
