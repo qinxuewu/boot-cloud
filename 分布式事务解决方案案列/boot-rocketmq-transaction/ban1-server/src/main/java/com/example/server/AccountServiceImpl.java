@@ -42,9 +42,16 @@ public class AccountServiceImpl  implements  AccountService{
         if(accountDao.isExisTx(txNo)>0){
             return ;
         }
+        // 检查用户余额  执行扣减
         accountDao.decrease(userId,money);
+        // 模拟扣减后，，其它业务处理失败异常
+        if(money>=100 || money< 200){
+            throw new RuntimeException("人工模拟扣减账户金额 异常触发...........");
+        }
         // 增加事务日志 防止幂等
         accountDao.addTx(txNo);
+
+
 
     }
 

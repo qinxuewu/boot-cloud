@@ -31,6 +31,6 @@ public class AccountController {
     public String decrease(@RequestParam("userId") Long userId, @RequestParam("toUserId") Long toUserId,@RequestParam("money") Double money){
         String txNo= UUID.randomUUID().toString();
         accountService.sendUpdateAccontChange(userId,toUserId,money,txNo);
-        return "转账接口 请求成功..... 预计最晚明天12点前到账";
+        return "转账接口 请求成功.....";
     }
 }

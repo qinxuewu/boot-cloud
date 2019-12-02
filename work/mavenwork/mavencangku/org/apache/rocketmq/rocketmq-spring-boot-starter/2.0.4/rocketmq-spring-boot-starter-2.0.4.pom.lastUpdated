@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Dec 02 09:09:46 CST 2019
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1575248986848
+https\://repo.spring.io/milestone/.error=
+https\://repo.spring.io/milestone/.lastUpdated=1575248965813
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.apache.rocketmq\:rocketmq-spring-boot-starter\:pom\:2.0.4 from/to central (https\://repo.maven.apache.org/maven2)\: Connect to repo.maven.apache.org\:443 [repo.maven.apache.org/151.101.52.215] failed\: Connection timed out\: connect

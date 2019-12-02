@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Dec 02 09:25:27 CST 2019
+https\://repo.maven.apache.org/maven2/.lastUpdated=1575249927509
+https\://repo.spring.io/milestone/.error=Could not transfer artifact org.springframework\:spring-framework-bom\:pom\:5.1.4.RELEASE from/to spring-milestones (https\://repo.spring.io/milestone)\: Connect to repo.spring.io\:443 [repo.spring.io/35.241.58.96] failed\: Connection timed out\: connect
+@default-spring-milestones-https\://repo.spring.io/milestone/.lastUpdated=1575249927000
