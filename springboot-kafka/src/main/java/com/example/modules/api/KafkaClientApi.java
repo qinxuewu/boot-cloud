@@ -1,5 +1,7 @@
 package com.example.modules.api;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -47,13 +49,14 @@ public class KafkaClientApi {
         Producer<String, Object> producer = new KafkaProducer<>(props);
         ;
         try {
-            producer.send(new ProducerRecord<String, Object>(topic, value));
+            producer.send(new ProducerRecord<>(topic, value));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             producer.close();
         }
     }
+
 
 
     public static void main(String[] args) {

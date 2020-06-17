@@ -13,11 +13,12 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @date: 2019/11/25 16:56
  * @since 1.0.0
  */
+
+
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableDiscoveryClient
 @EnableFeignClients
 public class OrderServerApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(OrderServerApplication.class, args);
     }

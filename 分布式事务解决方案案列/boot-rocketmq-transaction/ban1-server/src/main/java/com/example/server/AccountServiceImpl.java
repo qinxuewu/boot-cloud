@@ -10,14 +10,14 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
+
 
 
 /**
- * 功能描述: 
+ * 功能描述:
  * @author: qinxuewu
  * @date: 2019/11/25 17:24
- * @since 1.0.0 
+ * @since 1.0.0
  */
 @Service("accountService")
 public class AccountServiceImpl  implements  AccountService{
@@ -64,6 +64,7 @@ public class AccountServiceImpl  implements  AccountService{
      */
     @Override
     public void sendUpdateAccontChange(Long userId,Long toUserId, double amount, String txNo) {
+        // 发送MQ转账消息
         JSONObject jsonObject=new JSONObject();
         jsonObject.put("userId",userId);
         jsonObject.put("toUserId",toUserId);
@@ -71,11 +72,9 @@ public class AccountServiceImpl  implements  AccountService{
         jsonObject.put("txNo",txNo);
         String str=jsonObject.toJSONString();
         Message<String> bulid= MessageBuilder.withPayload(str).build();
-
         // 发送一条事务消息
-        rocketMQTemplate.sendMessageInTransaction("producer_group_trmsg_bank1","topic_txmsg",bulid,null);
-
-
+        rocketMQTemplate.sendMessageInTransaction("producer_group_trmsg_bank1",
+                "topic_txmsg",bulid,null);
     }
 
 }

@@ -7,7 +7,6 @@ import com.sun.org.apache.regexp.internal.RE;
 import org.apache.rocketmq.spring.annotation.RocketMQTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionState;
-import org.omg.CORBA.UNKNOWN;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
@@ -25,18 +24,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 @RocketMQTransactionListener(txProducerGroup = "producer_group_trmsg_bank1")
 public class ProduccerTxmsgListener implements RocketMQLocalTransactionListener {
-
     @Autowired
     AccountDao accountDao;
     @Autowired
     AccountService accountService;
 
-    /**
-     * 实现本地事务提交,事务消息发送成功后的回调方法
-     * @param msg
-     * @param arg
-     * @return
-     */
+
+
     @Override
     @Transactional(rollbackFor = Exception.class)
     public RocketMQLocalTransactionState executeLocalTransaction(Message msg, Object arg) {
@@ -45,7 +39,6 @@ public class ProduccerTxmsgListener implements RocketMQLocalTransactionListener 
             // 解析message
             String message=new String((byte[])msg.getPayload());
             JSONObject jsonObject=JSONObject.parseObject(message);
-
             Long userId=jsonObject.getLong("userId");
             double amount=jsonObject.getDouble("amount");
             String txNo=jsonObject.getString("txNo");
@@ -58,20 +51,14 @@ public class ProduccerTxmsgListener implements RocketMQLocalTransactionListener 
             return RocketMQLocalTransactionState.ROLLBACK;
         }
     }
-
-    /**
-     * 事务回查  当网络断调时 查询bank1是否已扣减金额
-     * @param msg
-     * @return
-     */
     @Override
     public RocketMQLocalTransactionState checkLocalTransaction(Message msg) {
+        // 事务回查  当网络断调时 查询bank1是否已扣减金额
         System.out.println("【事务回查  当网络断调时 查询bank1是否已扣减金额。。。。。。。】");
         // 解析message
         String message=new String((byte[])msg.getPayload());
         JSONObject jsonObject=JSONObject.parseObject(message);
         String txNo=jsonObject.getString("txNo");
-
          if(accountDao.isExisTx(txNo)>0){
                 return RocketMQLocalTransactionState.COMMIT;
          }

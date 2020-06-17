@@ -4,8 +4,10 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
 
+import javax.jnlp.ClipboardService;
 import java.util.Optional;
 
 /**
@@ -27,11 +29,12 @@ public class Consumer {
      * @throws Exception
      */
     @KafkaListener(topics = {"test", "qxw"})
-    public void listen(ConsumerRecord<?, ?> record) throws Exception {
+    public void listen(ConsumerRecord<?, ?> record, Acknowledgment acknowledgment) throws Exception {
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {
             Object message = kafkaMessage.get();
             logger.info("消费者开始消费message：" + message);
         }
     }
+
 }

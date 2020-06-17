@@ -29,7 +29,7 @@ public class OrderController {
     @GetMapping("/create")
     public String create(){
         Order order=new Order();
-        order.setUserId(1L);
+        order.setUserId(55L);
         order.setProductId(1L);
         order.setCount(2);
         BigDecimal bigDecimal=new BigDecimal("10");

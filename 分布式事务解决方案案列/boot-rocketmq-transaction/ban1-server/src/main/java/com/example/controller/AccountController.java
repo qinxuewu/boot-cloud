@@ -21,16 +21,14 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
-    /**
-     * 转账接口
-     * @param userId 用户id
-     * @param money 金额
-     * @return
-     */
+    /*** 转账接口*/
     @RequestMapping("decrease")
-    public String decrease(@RequestParam("userId") Long userId, @RequestParam("toUserId") Long toUserId,@RequestParam("money") Double money){
+    public String decrease(@RequestParam("userId") Long userId, @RequestParam("toUserId") Long toUserId,
+                           @RequestParam("money") Double money){
         String txNo= UUID.randomUUID().toString();
+        // 发z转账事务消息至MQ中
         accountService.sendUpdateAccontChange(userId,toUserId,money,txNo);
         return "转账接口 请求成功.....";
     }
+
 }

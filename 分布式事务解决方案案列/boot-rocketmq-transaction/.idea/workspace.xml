@@ -2,32 +2,522 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="742962c6-abf0-486c-9c48-5557d1651cc3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.4.1/_remote.repositories" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.4.1/archaius-core-0.4.1.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.4.1/archaius-core-0.4.1.pom.lastUpdated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.4.1/archaius-core-0.4.1.pom.sha1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.6.6/_remote.repositories" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.6.6/archaius-core-0.6.6.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.6.6/archaius-core-0.6.6.pom.lastUpdated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.6.6/archaius-core-0.6.6.pom.sha1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-core/8.10.1/_remote.repositories" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-core/8.10.1/feign-core-8.10.1.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-core/8.10.1/feign-core-8.10.1.pom.lastUpdated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-core/8.10.1/feign-core-8.10.1.pom.sha1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-okhttp/8.10.1/_remote.repositories" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-okhttp/8.10.1/feign-okhttp-8.10.1.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-okhttp/8.10.1/feign-okhttp-8.10.1.pom.lastUpdated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-okhttp/8.10.1/feign-okhttp-8.10.1.pom.sha1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/hystrix/hystrix-core/1.4.26/_remote.repositories" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/hystrix/hystrix-core/1.4.26/hystrix-core-1.4.26.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/hystrix/hystrix-core/1.4.26/hystrix-core-1.4.26.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot-kafka/src/main/java/com/example/modules/interceptor/AvgLatencyProducerInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot-zookeeper/.idea/springboot-zookeeper.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/alibaba/fastjson/1.2.47/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/alibaba/fastjson/1.2.47/fastjson-1.2.47-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/classmate/1.5.1/classmate-1.5.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-annotations/2.10.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-annotations/2.10.0/jackson-annotations-2.10.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-annotations/2.10.0/jackson-annotations-2.10.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-annotations/2.10.0/jackson-annotations-2.10.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-annotations/2.10.0/jackson-annotations-2.10.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-core/2.10.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-databind/2.10.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-databind/2.10.0/jackson-databind-2.10.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-databind/2.10.0/jackson-databind-2.10.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-databind/2.10.0/jackson-databind-2.10.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/core/jackson-databind/2.10.0/jackson-databind-2.10.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.10.0/jackson-datatype-jdk8-2.10.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.10.0/jackson-datatype-jdk8-2.10.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.10.0/jackson-datatype-jsr310-2.10.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-bom/2.8.10/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-bom/2.8.10/jackson-bom-2.8.10.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-bom/2.8.10/jackson-bom-2.8.10.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-bom/2.8.10/jackson-bom-2.8.10.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-bom/2.9.8/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-bom/2.9.8/jackson-bom-2.9.8.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-bom/2.9.8/jackson-bom-2.9.8.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-bom/2.9.8/jackson-bom-2.9.8.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-parent/2.8/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-parent/2.8/jackson-parent-2.8.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-parent/2.8/jackson-parent-2.8.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-parent/2.8/jackson-parent-2.8.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-parent/2.9.1.2/jackson-parent-2.9.1.2.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/fasterxml/jackson/jackson-parent/2.9.1.2/jackson-parent-2.9.1.2.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/google/code/findbugs/annotations/2.0.0/annotations-2.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/google/guava/guava/11.0.2/guava-11.0.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/google/guava/guava/11.0.2/guava-11.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.6.6/archaius-core-0.6.6-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/archaius/archaius-core/0.6.6/archaius-core-0.6.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-core/8.10.1/feign-core-8.10.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-core/8.10.1/feign-core-8.10.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-okhttp/8.10.1/feign-okhttp-8.10.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-okhttp/8.10.1/feign-okhttp-8.10.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/feign/feign-okhttp/8.10.1/feign-okhttp-8.10.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/hystrix/hystrix-core/1.4.26/hystrix-core-1.4.26-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/hystrix/hystrix-core/1.4.26/hystrix-core-1.4.26.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/netflix/hystrix/hystrix-core/1.4.26/hystrix-core-1.4.26.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/okhttp/2.5.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/parent/2.5.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/parent/2.5.0/parent-2.5.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/parent/2.5.0/parent-2.5.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okhttp/parent/2.5.0/parent-2.5.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio-parent/1.6.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio-parent/1.6.0/okio-parent-1.6.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio-parent/1.6.0/okio-parent-1.6.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio-parent/1.6.0/okio-parent-1.6.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio/1.6.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio/1.6.0/okio-1.6.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio/1.6.0/okio-1.6.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio/1.6.0/okio-1.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio/1.6.0/okio-1.6.0.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio/1.6.0/okio-1.6.0.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio/1.6.0/okio-1.6.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio/1.6.0/okio-1.6.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/squareup/okio/okio/1.6.0/okio-1.6.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/com/zaxxer/HikariCP/3.4.1/HikariCP-3.4.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-codec/commons-codec/1.13/commons-codec-1.13-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-codec/commons-codec/1.13/commons-codec-1.13-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8-javadoc.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8-javadoc.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8-sources.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8-sources.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-fileupload/commons-fileupload/1.3.3/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-io/commons-io/2.2/commons-io-2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-core/10.1.0/feign-core-10.1.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-core/10.1.0/feign-core-10.1.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-core/10.1.0/feign-core-10.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-hystrix/10.1.0/feign-hystrix-10.1.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-hystrix/10.1.0/feign-hystrix-10.1.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-hystrix/10.1.0/feign-hystrix-10.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-slf4j/10.1.0/feign-slf4j-10.1.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-slf4j/10.1.0/feign-slf4j-10.1.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-slf4j/10.1.0/feign-slf4j-10.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/feign-slf4j/10.1.0/feign-slf4j-10.1.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form-spring/3.5.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form-spring/3.5.0/feign-form-spring-3.5.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form-spring/3.5.0/feign-form-spring-3.5.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form-spring/3.5.0/feign-form-spring-3.5.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form-spring/3.5.0/feign-form-spring-3.5.0.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form-spring/3.5.0/feign-form-spring-3.5.0.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form-spring/3.5.0/feign-form-spring-3.5.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form-spring/3.5.0/feign-form-spring-3.5.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form-spring/3.5.0/feign-form-spring-3.5.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form/3.5.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form/3.5.0/feign-form-3.5.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form/3.5.0/feign-form-3.5.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form/3.5.0/feign-form-3.5.0.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form/3.5.0/feign-form-3.5.0.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form/3.5.0/feign-form-3.5.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form/3.5.0/feign-form-3.5.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/feign-form/3.5.0/feign-form-3.5.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/parent/3.5.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/parent/3.5.0/parent-3.5.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/parent/3.5.0/parent-3.5.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/form/parent/3.5.0/parent-3.5.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/parent/10.1.0/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/parent/10.1.0/parent-10.1.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/parent/10.1.0/parent-10.1.0.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/github/openfeign/parent/10.1.0/parent-10.1.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/netty/netty-bom/4.1.31.Final/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/netty/netty-bom/4.1.31.Final/netty-bom-4.1.31.Final.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/netty/netty-bom/4.1.31.Final/netty-bom-4.1.31.Final.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/netty/netty-bom/4.1.31.Final/netty-bom-4.1.31.Final.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/netty/netty-tcnative-boringssl-static/2.0.26.Final/netty-tcnative-boringssl-static-2.0.26.Final-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/projectreactor/reactor-bom/Californium-SR4/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/projectreactor/reactor-bom/Californium-SR4/reactor-bom-Californium-SR4.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/projectreactor/reactor-bom/Californium-SR4/reactor-bom-Californium-SR4.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/projectreactor/reactor-bom/Californium-SR4/reactor-bom-Californium-SR4.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/reactivex/rxjava/1.3.8/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/reactivex/rxjava/1.3.8/rxjava-1.3.8-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/reactivex/rxjava/1.3.8/rxjava-1.3.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/reactivex/rxjava/1.3.8/rxjava-1.3.8.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/reactivex/rxjava/1.3.8/rxjava-1.3.8.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/reactivex/rxjava/1.3.8/rxjava-1.3.8.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/reactivex/rxjava/1.3.8/rxjava-1.3.8.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/io/reactivex/rxjava/1.3.8/rxjava-1.3.8.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/jakarta/validation/jakarta.validation-api/2.0.1/jakarta.validation-api-2.0.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/mysql/mysql-connector-java/8.0.18/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/mysql/mysql-connector-java/8.0.18/mysql-connector-java-8.0.18.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/mysql/mysql-connector-java/8.0.18/mysql-connector-java-8.0.18.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/mysql/mysql-connector-java/8.0.18/mysql-connector-java-8.0.18.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/bytebuddy/byte-buddy-agent/1.10.2/byte-buddy-agent-1.10.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/bytebuddy/byte-buddy-agent/1.10.2/byte-buddy-agent-1.10.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/bytebuddy/byte-buddy/1.10.2/byte-buddy-1.10.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/bytebuddy/byte-buddy/1.10.2/byte-buddy-1.10.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/bytebuddy/byte-buddy/1.10.2/byte-buddy-1.10.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/minidev/accessors-smart/1.2/accessors-smart-1.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/minidev/accessors-smart/1.2/accessors-smart-1.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/minidev/json-smart/2.3/json-smart-2.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/minidev/json-smart/2.3/json-smart-2.3-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/net/minidev/json-smart/2.3/json-smart-2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/18/apache-18.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/18/apache-18.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/18/apache-18.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/7/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/7/apache-7.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/7/apache-7.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/7/apache-7.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/9/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/9/apache-9.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/9/apache-9.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/apache/9/apache-9.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-compress/1.18/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-compress/1.18/commons-compress-1.18.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-compress/1.18/commons-compress-1.18.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-compress/1.19/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-compress/1.19/commons-compress-1.19.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-compress/1.19/commons-compress-1.19.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-lang3/3.9/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/11/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/11/commons-parent-11.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/11/commons-parent-11.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/11/commons-parent-11.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/17/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/17/commons-parent-17.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/17/commons-parent-17.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/17/commons-parent-17.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/23/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/23/commons-parent-23.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/23/commons-parent-23.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/23/commons-parent-23.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/24/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/24/commons-parent-24.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/24/commons-parent-24.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/24/commons-parent-24.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/39/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/39/commons-parent-39.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/39/commons-parent-39.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/41/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/41/commons-parent-41.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/41/commons-parent-41.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/41/commons-parent-41.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/42/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/42/commons-parent-42.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/42/commons-parent-42.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/47/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/47/commons-parent-47.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/47/commons-parent-47.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/48/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/48/commons-parent-48.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/48/commons-parent-48.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/48/commons-parent-48.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/5/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/5/commons-parent-5.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/5/commons-parent-5.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/commons/commons-parent/5/commons-parent-5.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.11.1/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.11.1/log4j-bom-2.11.1.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.11.1/log4j-bom-2.11.1.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.11.1/log4j-bom-2.11.1.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.12.1/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.12.1/log4j-bom-2.12.1.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.12.1/log4j-bom-2.12.1.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.12.1/log4j-bom-2.12.1.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.7/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.7/log4j-bom-2.7.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.7/log4j-bom-2.7.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-bom/2.7/log4j-bom-2.7.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/log4j/log4j-to-slf4j/2.12.1/log4j-to-slf4j-2.12.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/logging-parent/1/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/logging-parent/1/logging-parent-1.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/logging-parent/1/logging-parent-1.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/logging/logging-parent/1/logging-parent-1.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-acl/4.5.2/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-acl/4.5.2/rocketmq-acl-4.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-acl/4.5.2/rocketmq-acl-4.5.2.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-acl/4.5.2/rocketmq-acl-4.5.2.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-acl/4.5.2/rocketmq-acl-4.5.2.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-acl/4.5.2/rocketmq-acl-4.5.2.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-acl/4.5.2/rocketmq-acl-4.5.2.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-all/4.5.2/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-all/4.5.2/rocketmq-all-4.5.2.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-all/4.5.2/rocketmq-all-4.5.2.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-all/4.5.2/rocketmq-all-4.5.2.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-client/4.5.2/rocketmq-client-4.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-client/4.5.2/rocketmq-client-4.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-common/4.5.2/rocketmq-common-4.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-common/4.5.2/rocketmq-common-4.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-logging/4.5.2/rocketmq-logging-4.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-logging/4.5.2/rocketmq-logging-4.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-remoting/4.5.2/rocketmq-remoting-4.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-remoting/4.5.2/rocketmq-remoting-4.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-spring-boot-starter/2.0.4/rocketmq-spring-boot-starter-2.0.4-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-spring-boot-starter/2.0.4/rocketmq-spring-boot-starter-2.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-spring-boot/2.0.4/rocketmq-spring-boot-2.0.4-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-spring-boot/2.0.4/rocketmq-spring-boot-2.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-srvutil/4.5.2/rocketmq-srvutil-4.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-srvutil/4.5.2/rocketmq-srvutil-4.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-srvutil/4.5.2/rocketmq-srvutil-4.5.2.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-srvutil/4.5.2/rocketmq-srvutil-4.5.2.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-srvutil/4.5.2/rocketmq-srvutil-4.5.2.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-srvutil/4.5.2/rocketmq-srvutil-4.5.2.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apache/rocketmq/rocketmq-srvutil/4.5.2/rocketmq-srvutil-4.5.2.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/aspectj/aspectjweaver/1.9.4/aspectjweaver-1.9.4-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/assertj/assertj-core/3.13.2/assertj-core-3.13.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/assertj/assertj-core/3.13.2/assertj-core-3.13.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcpkix-jdk15on/1.60/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcprov-jdk15on/1.60/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.jar.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/eclipse/ee4j/project/1.0.5/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/eclipse/ee4j/project/1.0.5/project-1.0.5.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/eclipse/ee4j/project/1.0.5/project-1.0.5.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/eclipse/ee4j/project/1.0.5/project-1.0.5.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/eclipse/jetty/jetty-bom/9.4.14.v20181114/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/eclipse/jetty/jetty-bom/9.4.14.v20181114/jetty-bom-9.4.14.v20181114.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/eclipse/jetty/jetty-bom/9.4.14.v20181114/jetty-bom-9.4.14.v20181114.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/eclipse/jetty/jetty-bom/9.4.14.v20181114/jetty-bom-9.4.14.v20181114.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/glassfish/jersey/jersey-bom/2.27/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/glassfish/jersey/jersey-bom/2.27/jersey-bom-2.27.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/glassfish/jersey/jersey-bom/2.27/jersey-bom-2.27.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/glassfish/jersey/jersey-bom/2.27/jersey-bom-2.27.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/glassfish/jersey/jersey-bom/2.29.1/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/hamcrest/hamcrest/2.1/hamcrest-2.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/hamcrest/hamcrest/2.1/hamcrest-2.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/hibernate/validator/hibernate-validator/6.0.18.Final/hibernate-validator-6.0.18.Final-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/jboss/logging/jboss-logging/3.4.1.Final/jboss-logging-3.4.1.Final-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/jetbrains/kotlin/kotlin-bom/1.3.50/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/jetbrains/kotlin/kotlin-bom/1.3.50/kotlin-bom-1.3.50.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/jetbrains/kotlin/kotlin-bom/1.3.50/kotlin-bom-1.3.50.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/jetbrains/kotlin/kotlin-bom/1.3.50/kotlin-bom-1.3.50.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.2/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.2/kotlinx-coroutines-bom-1.3.2.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.2/kotlinx-coroutines-bom-1.3.2.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.2/kotlinx-coroutines-bom-1.3.2.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/junit-bom/5.5.2/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/junit-bom/5.5.2/junit-bom-5.5.2.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/junit-bom/5.5.2/junit-bom-5.5.2.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/junit-bom/5.5.2/junit-bom-5.5.2.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/jupiter/junit-jupiter-params/5.5.2/junit-jupiter-params-5.5.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/jupiter/junit-jupiter-params/5.5.2/junit-jupiter-params-5.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/jupiter/junit-jupiter/5.5.2/junit-jupiter-5.5.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/jupiter/junit-jupiter/5.5.2/junit-jupiter-5.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mockito/mockito-core/3.1.0/mockito-core-3.1.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mockito/mockito-core/3.1.0/mockito-core-3.1.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mockito/mockito-junit-jupiter/3.1.0/mockito-junit-jupiter-3.1.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mockito/mockito-junit-jupiter/3.1.0/mockito-junit-jupiter-3.1.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/mybatis-parent/29/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/mybatis-parent/29/mybatis-parent-29.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/mybatis-parent/29/mybatis-parent-29.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/mybatis-parent/29/mybatis-parent-29.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/mybatis-spring/1.3.2/mybatis-spring-1.3.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/1.3.2/mybatis-spring-boot-autoconfigure-1.3.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/spring/boot/mybatis-spring-boot-starter/1.3.2/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/spring/boot/mybatis-spring-boot-starter/1.3.2/mybatis-spring-boot-starter-1.3.2.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/spring/boot/mybatis-spring-boot-starter/1.3.2/mybatis-spring-boot-starter-1.3.2.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/spring/boot/mybatis-spring-boot-starter/1.3.2/mybatis-spring-boot-starter-1.3.2.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/spring/boot/mybatis-spring-boot/1.3.2/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/spring/boot/mybatis-spring-boot/1.3.2/mybatis-spring-boot-1.3.2.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/spring/boot/mybatis-spring-boot/1.3.2/mybatis-spring-boot-1.3.2.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/mybatis/spring/boot/mybatis-spring-boot/1.3.2/mybatis-spring-boot-1.3.2.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/objenesis/objenesis/2.6/objenesis-2.6-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/ow2/asm/asm/5.0.4/asm-5.0.4-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/ow2/asm/asm/5.0.4/asm-5.0.4-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/jul-to-slf4j/1.7.29/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/jul-to-slf4j/1.7.29/jul-to-slf4j-1.7.29-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/jul-to-slf4j/1.7.29/jul-to-slf4j-1.7.29.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/jul-to-slf4j/1.7.29/jul-to-slf4j-1.7.29.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/jul-to-slf4j/1.7.29/jul-to-slf4j-1.7.29.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/slf4j-api/1.7.29/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/slf4j-parent/1.7.29/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/slf4j-parent/1.7.29/slf4j-parent-1.7.29.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/slf4j-parent/1.7.29/slf4j-parent-1.7.29.pom.lastUpdated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/slf4j/slf4j-parent/1.7.29/slf4j-parent-1.7.29.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-parent/2.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-parent/2.2.1.RELEASE/spring-boot-parent-2.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-parent/2.2.1.RELEASE/spring-boot-parent-2.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-aop/2.2.1.RELEASE/spring-boot-starter-aop-2.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-aop/2.2.1.RELEASE/spring-boot-starter-aop-2.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-jdbc/2.2.1.RELEASE/spring-boot-starter-jdbc-2.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-logging/2.2.1.RELEASE/spring-boot-starter-logging-2.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-test/2.2.1.RELEASE/spring-boot-starter-test-2.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-test/2.2.1.RELEASE/spring-boot-starter-test-2.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-tomcat/2.2.1.RELEASE/spring-boot-starter-tomcat-2.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-web/2.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-web/2.2.1.RELEASE/spring-boot-starter-web-2.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter-web/2.2.1.RELEASE/spring-boot-starter-web-2.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter/2.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter/2.2.1.RELEASE/spring-boot-starter-2.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starter/2.2.1.RELEASE/spring-boot-starter-2.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starters/2.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starters/2.2.1.RELEASE/spring-boot-starters-2.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-starters/2.2.1.RELEASE/spring-boot-starters-2.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-test-autoconfigure/2.2.1.RELEASE/spring-boot-test-autoconfigure-2.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-test-autoconfigure/2.2.1.RELEASE/spring-boot-test-autoconfigure-2.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-test/2.2.1.RELEASE/spring-boot-test-2.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/boot/spring-boot-test/2.2.1.RELEASE/spring-boot-test-2.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-commons/2.1.0.RELEASE/spring-cloud-commons-2.1.0.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-commons/2.1.0.RELEASE/spring-cloud-commons-2.1.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-context/2.1.0.RELEASE/spring-cloud-context-2.1.0.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-context/2.1.0.RELEASE/spring-cloud-context-2.1.0.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-context/2.1.0.RELEASE/spring-cloud-context-2.1.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-netflix-archaius/2.1.0.RELEASE/spring-cloud-netflix-archaius-2.1.0.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-netflix-archaius/2.1.0.RELEASE/spring-cloud-netflix-archaius-2.1.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-netflix-ribbon/2.1.0.RELEASE/spring-cloud-netflix-ribbon-2.1.0.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-netflix-ribbon/2.1.0.RELEASE/spring-cloud-netflix-ribbon-2.1.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-openfeign-core/2.1.0.RELEASE/spring-cloud-openfeign-core-2.1.0.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-openfeign-core/2.1.0.RELEASE/spring-cloud-openfeign-core-2.1.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-starter-openfeign/2.1.0.RELEASE/spring-cloud-starter-openfeign-2.1.0.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-starter-openfeign/2.1.0.RELEASE/spring-cloud-starter-openfeign-2.1.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-starter/2.1.0.RELEASE/spring-cloud-starter-2.1.0.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/cloud/spring-cloud-starter/2.1.0.RELEASE/spring-cloud-starter-2.1.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/data/build/spring-data-build/2.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/data/build/spring-data-build/2.2.1.RELEASE/spring-data-build-2.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/data/build/spring-data-build/2.2.1.RELEASE/spring-data-build-2.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/data/spring-data-releasetrain/Moore-SR1/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/data/spring-data-releasetrain/Moore-SR1/spring-data-releasetrain-Moore-SR1.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/data/spring-data-releasetrain/Moore-SR1/spring-data-releasetrain-Moore-SR1.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/integration/spring-integration-bom/5.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/integration/spring-integration-bom/5.2.1.RELEASE/spring-integration-bom-5.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/integration/spring-integration-bom/5.2.1.RELEASE/spring-integration-bom-5.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/security/spring-security-bom/5.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/security/spring-security-bom/5.2.1.RELEASE/spring-security-bom-5.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/security/spring-security-bom/5.2.1.RELEASE/spring-security-bom-5.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/security/spring-security-crypto/5.2.1.RELEASE/spring-security-crypto-5.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/security/spring-security-crypto/5.2.1.RELEASE/spring-security-crypto-5.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/security/spring-security-crypto/5.2.1.RELEASE/spring-security-crypto-5.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/security/spring-security-rsa/1.0.7.RELEASE/spring-security-rsa-1.0.7.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/security/spring-security-rsa/1.0.7.RELEASE/spring-security-rsa-1.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/session/spring-session-bom/Corn-RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/session/spring-session-bom/Corn-RELEASE/spring-session-bom-Corn-RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/session/spring-session-bom/Corn-RELEASE/spring-session-bom-Corn-RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-aop/5.2.1.RELEASE/spring-aop-5.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-beans/5.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-beans/5.2.1.RELEASE/spring-beans-5.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-beans/5.2.1.RELEASE/spring-beans-5.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-context/5.2.1.RELEASE/spring-context-5.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-core/5.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-core/5.2.1.RELEASE/spring-core-5.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-core/5.2.1.RELEASE/spring-core-5.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-expression/5.2.1.RELEASE/spring-expression-5.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-framework-bom/5.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-framework-bom/5.2.1.RELEASE/spring-framework-bom-5.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-framework-bom/5.2.1.RELEASE/spring-framework-bom-5.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-jcl/5.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-jcl/5.2.1.RELEASE/spring-jcl-5.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-jcl/5.2.1.RELEASE/spring-jcl-5.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-jcl/5.2.1.RELEASE/spring-jcl-5.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-jcl/5.2.1.RELEASE/spring-jcl-5.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-jdbc/5.2.1.RELEASE/spring-jdbc-5.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-test/5.2.1.RELEASE/spring-test-5.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-test/5.2.1.RELEASE/spring-test-5.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-tx/5.2.1.RELEASE/spring-tx-5.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-tx/5.2.1.RELEASE/spring-tx-5.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-web/5.2.1.RELEASE/_remote.repositories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/xmlunit/xmlunit-core/2.6.3/xmlunit-core-2.6.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/xmlunit/xmlunit-core/2.6.3/xmlunit-core-2.6.3-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/yaml/snakeyaml/1.25/snakeyaml-1.25-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../work/mavenwork/mavencangku/org/yaml/snakeyaml/1.25/snakeyaml-1.25-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot-kafka/src/main/java/com/example/modules/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot-kafka/src/main/java/com/example/modules/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot-kafka/src/main/java/com/example/modules/api/KafkaClientApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot-kafka/src/main/java/com/example/modules/api/KafkaClientApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot-kafka/src/main/java/com/example/modules/api/KafkaConsumerApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot-kafka/src/main/java/com/example/modules/api/KafkaConsumerApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot-zookeeper/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot-zookeeper/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot-zookeeper/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot-zookeeper/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot-zookeeper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot-zookeeper/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
@@ -64,6 +554,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="$PROJECT_DIR$/../../work/mavenwork/mavencangku" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.6.1" />
         <option name="userSettingsFile" value="$PROJECT_DIR$/../../work/mavenwork/apache-maven-3.3.3/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -78,6 +569,9 @@
   <component name="MavenRunner">
     <option name="jreName" value="1.8" />
     <option name="vmOptions" value="-Dmaven.multiModuleProjectDirectory=$M2_HOME" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1UPCKfWh3SKDF3yvrXIctL7WzFK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -100,10 +594,10 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -129,7 +623,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Ban1ServerApplication">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="boot-rocketmq-transaction" />
       <working_directory value="$PROJECT_DIR$" />
@@ -221,6 +715,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Ban1ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ban1-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Ban1ServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ban2ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ban2-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Ban2ServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -249,6 +757,8 @@
       <workItem from="1575171117348" duration="238000" />
       <workItem from="1575171567674" duration="6972000" />
       <workItem from="1575248783754" duration="5562000" />
+      <workItem from="1587551486816" duration="2653000" />
+      <workItem from="1587715261290" duration="4650000" />
     </task>
     <servers />
   </component>
@@ -260,7 +770,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
