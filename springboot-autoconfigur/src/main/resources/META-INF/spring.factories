@@ -1,3 +1,20 @@
 # 自动装配
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.github.config.MyAutoConfiguration
+
+
+# ApplicationContextInitializer 实现配置
+org.springframework.context.ApplicationContextInitializer=\
+com.github.context.AfterHelloApplicationContextInitializer,\
+com.github.context.HelloApplicationContextInitializer
+
+
+
+# ApplicationListener 实现配置
+org.springframework.context.ApplicationListener=\
+com.github.listener.AfterHelloApplicationListener,\
+com.github.listener.HelloApplicationListener
+
+# SpringApplicationRunListener 实现配置
+org.springframework.boot.SpringApplicationRunListener=\
+com.github.run.HelloRunListener
