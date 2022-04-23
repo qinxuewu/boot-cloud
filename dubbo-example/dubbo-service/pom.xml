@@ -10,7 +10,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.vesion>4.3.2.RELEASE</spring.vesion>
+        <spring.vesion>5.3.19</spring.vesion>
     </properties>
 
 
